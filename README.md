@@ -1,5 +1,9 @@
 # websemanticabot
 
+## observação
+
+o node.js deve estar instalado: https://nodejs.org/
+
 ## instalar as dependencias
 
 npm install
