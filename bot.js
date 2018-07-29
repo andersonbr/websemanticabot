@@ -1,27 +1,31 @@
 'use strict'
- 
-const Telegram = require('telegram-node-bot')
-const TelegramBaseController = Telegram.TelegramBaseController
-const TextCommand = Telegram.TextCommand
-const tg = new Telegram.Telegram(process.env.TELEGRAMTOKEN)
- 
-class PingController extends TelegramBaseController {
-    /**
-     * @param {Scope} $ 
-     */
-    pingHandler($) {
-        $.sendMessage('pong')
-    }
- 
-    get routes() {
-        return {
-            'pingCommand': 'pingHandler'
-        }
-    }
+
+const Telegraf = require('telegraf')
+const bot = new Telegraf(process.env.TELEGRAMTOKEN)
+const sparql = require('./sparql.js')
+const comandos = require('./comandos.js')(sparql)
+
+bot.context.db = {
+  getScores: () => { return 42 }
 }
- 
-tg.router
-    .when(
-        new TextCommand('ping', 'pingCommand'),
-        new PingController()
-    )
+
+bot.use((ctx, next) => {
+  const start = new Date()
+  if (ctx.message)
+    console.log(ctx.message)
+  return next(ctx).then(() => {
+    const ms = new Date() - start
+    console.log('Response time %sms', ms)
+  })
+})
+
+bot.start((ctx) => ctx.reply('Welcome!'))
+bot.help((ctx) => ctx.reply('Send me a sticker'))
+bot.on('sticker', (ctx) => ctx.reply('👍'))
+bot.hears('hi', (ctx) => ctx.reply('Hey there'))
+bot.hears(/buy/i, (ctx) => ctx.reply('Buy-buy'))
+bot.on('text', (ctx) => {
+    comandos.parseAndRun(ctx);
+})
+
+bot.startPolling()

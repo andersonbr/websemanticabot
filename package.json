@@ -1,0 +1,14 @@
+{
+  "name": "bot"
+  "author": {
+    "name": "Anderson Calixto",
+    "email": "andersonbr@lia.ufc.br"
+  },
+  "main": "bot.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "sparql-client-2": "0.6.2"
+    "telegraf": "3.22.1"
+  }
+}
+
