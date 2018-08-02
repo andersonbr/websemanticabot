@@ -1,4 +1,9 @@
 'use strict'
+global.valor = function(vari){
+					if(vari)
+						return vari.value
+					return ""
+				}
 
 const Telegraf = require('telegraf')
 const bot = new Telegraf(process.env.TELEGRAMTOKEN)
