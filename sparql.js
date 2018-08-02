@@ -21,7 +21,7 @@ module.exports = {
   },
   fetchDefinicao: function (termo) {
     return this.client.query(SPARQL`
-     SELECT  DISTINCT (GROUP_CONCAT(DISTINCT LCASE(?auxLabel);separator=" OU ") AS ?titles) (GROUP_CONCAT( DISTINCT LCASE(?auxTipo);separator=" ; ") as ?types) (GROUP_CONCAT(DISTINCT LCASE(?auxComment);separator=" . ") as ?comments) WHERE{
+     SELECT  DISTINCT (GROUP_CONCAT(DISTINCT LCASE(?auxLabel);separator="\\nOU\\n") AS ?titles) (GROUP_CONCAT( DISTINCT LCASE(?auxTipo);separator=" ; ") as ?types) (GROUP_CONCAT(DISTINCT LCASE(?auxComment);separator=" . ") as ?comments) WHERE{
         {?termo rdfs:label ?auxLabel}UNION
         {?termo dc:title ?auxLabel}
         OPTIONAL{
@@ -140,14 +140,14 @@ module.exports = {
             OPTIONAL{
               ?risco drugs:observacaoRisco ?observacao.
             }
-            BIND(CONCAT("Categoria:\\n",str(?categoria),"\\nDescrição:\\n",str(?definicao),"\\nObservação:\\n",str(?observacao)) as ?risco_gravidez)
+            BIND(STR(CONCAT("\\tCategoria:\\n",str(?categoria),"\\n\\tDescricao:\\n",str(?definicao),"\\n\\tObservacao:\\n",str(?observacao))) as ?risco_gravidez)
           }
           OPTIONAL{
             ?risco drugs:usoAleitamento ?aleitamento.
             ?aleitamento rdfs:label ?categoriaA;
               rdfs:comment ?definicaoA.
             
-            BIND(CONCAT("Categoria:\\n",str(?categoriaA),"\\nDescrição:\\n",str(?definicaoA),"\\nObservação:\\n") as ?uso_aleitamento)
+            BIND(STR(CONCAT("\\tCategoria:\\n",str(?categoriaA),"\\n\\tDescricao:\\n",str(?definicaoA),"\\n\\tObservacao:\\n")) as ?uso_aleitamento)
           }
           OPTIONAL{
             ?risco drugs:observacaoAplicacao ?aplicacao.
@@ -156,6 +156,128 @@ module.exports = {
         
         FILTER(REGEX(str(?title),${medicamento},"i"))
       }GROUP BY ?medicamento `)
+    .execute()
+    .then(response => Promise.resolve(response.results));
+  },
+  fetchApresentacao: function (medicamento) {
+    return this.client.query(SPARQL`
+      PREFIX drugs: <http://www.arida.ufc.br/ontology/drugs/>
+      PREFIX dc: <http://purl.org/dc/elements/1.1/>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
+
+      SELECT ?title ?laboratorio ?apresentacoes WHERE{
+        ?medicamento a drugs:Medicamento;
+          dc:title ?title.
+        OPTIONAL{
+          ?medicamento drugs:produtor ?produtor.
+          ?produtor dc:title ?laboratorio
+
+        }
+        OPTIONAL{
+          {
+            SELECT ?medicamento (GROUP_CONCAT(DISTINCT LCASE(CONCAT("(Código de Barras: ",?ean," ) ",?titleApresentacao)); separator=".\\n") as ?apresentacoes) WHERE{
+              ?medicamento drugs:temApresentacao ?apresentacao.
+              ?apresentacao dc:title ?titleApresentacao;
+                drugs:ean ?ean.
+            }GROUP BY ?medicamento
+          }
+        }
+
+        FILTER(REGEX(str(?title),${medicamento},"i"))
+      }`)
+    .execute()
+    .then(response => Promise.resolve(response.results));
+  },fetchInfoApresentacao: function (ean) {
+    return this.client.query(SPARQL`
+      PREFIX drugs: <http://www.arida.ufc.br/ontology/drugs/>
+      PREFIX dc: <http://purl.org/dc/elements/1.1/>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
+      SELECT DISTINCT ?titleApresentacao ?titleMedicamento ?ean  ?tarja ?restricao ?valorFabricaSemImposto ?valorGovernoSemImposto ?valorConsumidorSemImposto WHERE{
+        ?apresentacao a drugs:Apresentacao;
+          dc:title ?titleApresentacao;
+          drugs:ean ?ean;
+          drugs:restricaoHospitalar ?restricao;
+          drugs:tarja ?tarjaAux.
+        OPTIONAL{
+          ?medicamento drugs:temApresentacao ?apresentacao;
+            dc:title ?titleMedicamento.
+        }
+
+        ?tarjaAux rdfs:label ?titleTarja;
+          rdfs:comment ?comentTarja.
+        OPTIONAL{
+          ?apresentacao drugs:preco ?preco1.
+          ?preco1 a drugs:PrecoFabricaSemImposto;
+            drugs:valorPreco ?valorFabricaSemImposto.
+        }
+        OPTIONAL{
+          ?apresentacao drugs:preco ?preco2.
+          ?preco2 a drugs:PrecoAoGovernoSemImposto;
+            drugs:valorPreco ?valorGovernoSemImposto.
+        }
+        OPTIONAL{
+          ?apresentacao drugs:preco ?preco3.
+          ?preco3 a drugs:PrecoAoConsumidorSemImposto;
+            drugs:valorPreco ?valorConsumidorSemImposto.
+        }
+
+        
+        BIND(CONCAT(str(?titleTarja),":\\n",str(?comentTarja)) as ?tarja)
+
+        FILTER(REGEX(str(?ean),${ean},"i"))
+      }`)
+    .execute()
+    .then(response => Promise.resolve(response.results));
+  },fetchPreco: function (ean,localidade) {
+    return this.client.query(SPARQL`
+      PREFIX drugs: <http://www.arida.ufc.br/ontology/drugs/>
+      PREFIX dc: <http://purl.org/dc/elements/1.1/>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
+      SELECT DISTINCT ?titleApresentacao ?titleMedicamento ?ean ?ICMS  ?valorFabricaComImposto ?valorConsumidorComImposto ?valorGovernoComImposto WHERE{
+        ?apresentacao a drugs:Apresentacao;
+          dc:title ?titleApresentacao;
+          drugs:ean ?ean;
+          drugs:restricaoHospitalar ?restricao;
+          drugs:tarja ?tarjaAux.
+        OPTIONAL{
+          ?medicamento drugs:temApresentacao ?apresentacao;
+            dc:title ?titleMedicamento.
+        }
+
+        
+        ?carga drugs:cargaTributaria ?icmsP.
+        BIND(CONCAT(str(?icmsP),"%") as ?ICMS)
+
+        ?localidade drugs:cargaICMS ?carga;
+          rdfs:label ?local.
+        OPTIONAL{
+          ?apresentacao drugs:preco ?preco.
+          ?preco a drugs:PrecoFabricaComImposto;
+            drugs:valorPreco ?valorFabricaComImposto.
+          ?preco drugs:tributacao ?carga.
+
+        }
+        OPTIONAL{
+          ?apresentacao drugs:preco ?preco1.
+          ?preco1 a drugs:PrecoAoConsumidorComImposto;
+            drugs:valorPreco ?valorConsumidorComImposto.
+          ?preco1 drugs:tributacao ?carga.
+
+        }
+        OPTIONAL{
+          ?apresentacao drugs:preco ?preco2.
+          ?preco2 a drugs:PrecoAoGovernoComImposto;
+            drugs:valorPreco ?valorGovernoComImposto.
+          ?preco2 drugs:tributacao ?carga.
+
+        }
+
+
+        FILTER(REGEX(str(?ean),${ean},"i") && REGEX(str(?local),${localidade},"i"))
+      }`)
     .execute()
     .then(response => Promise.resolve(response.results));
   }

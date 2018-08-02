@@ -2,15 +2,15 @@
 module.exports = function(sparql) {
 	return {
 		parseAndRun: function(ctx) {
-			if (!this.checkRemediosDoPrincipioAtivo(ctx)) {
-				if (!this.checkDefinicaoTermo(ctx)) {
-					if (!this.checkRiscos(ctx)) {
-						if (!this.checkMedicamento(ctx)) {
+			if (!this.checkRemediosDoPrincipioAtivo(ctx)) 
+				if (!this.checkDefinicaoTermo(ctx)) 
+					if (!this.checkRiscos(ctx)) 
+						if (!this.checkPreco(ctx)) 
+							if (!this.checkInfoApresentacao(ctx)) 
+								if (!this.checkApresentacao(ctx)) 
+									if (!this.checkMedicamento(ctx)) {
 
-						}
-					}
-				}
-			}
+									}
 		},
 		checkRemediosDoPrincipioAtivo: function(ctx) {
 			const txt = ctx.message.text.replace(/( existem| existentes|)(|\.|\?|\!)$/, "")
@@ -61,7 +61,7 @@ module.exports = function(sparql) {
 					.fetchMedicamento(termo.replace(/[^a-zA-Z0-9]/g,'\\W+'))
 					.then(result => {
 						const definicoes = result.bindings.reduce(function(acc, cur, i) {
-							var resultado = "\n-Nomes conhechidos:\n"+valor(cur.title)+"\n\nLaboratório:\n"+valor(cur.laboratorio)+"\n\nQuantidade de apresentações:\n"+valor(cur.quantidade_apresentacoes)+"\n\n-Tipos:\n"+valor(cur.tipos)+"\n\n-Classe terapêutica:\n"+valor(cur.classeTerapeutica)+"\n\n-Principios ativos:\n"+valor(cur.nomes_principio_Ativo)+"\n\n-Indicações:\n"+valor(cur.indicacoes)
+							var resultado = "\n-Nomes conhechidos:\n"+valor(cur.title)+"\n\n-Laboratório:\n"+valor(cur.laboratorio)+"\n\n-Quantidade de apresentações:\n"+valor(cur.quantidade_apresentacoes)+"\n\n-Tipos:\n"+valor(cur.tipos)+"\n\n-Classe terapêutica:\n"+valor(cur.classeTerapeutica)+"\n\n-Principios ativos:\n"+valor(cur.nomes_principio_Ativo)+"\n\n-Indicações:\n"+valor(cur.indicacoes)
 							acc.push(resultado)
 							return acc
 						}, []).join("\n\n----------------------------------------\n\n");
@@ -76,13 +76,12 @@ module.exports = function(sparql) {
 			const riscosRegex = /(.*)risco(s?) d(.) (medicamento |rem[^]dio )?(.*)/i
 			const riscosMatch = txt.match(riscosRegex)
 			if (riscosMatch) {
-				console.log("Deu risco")
 				const termo = riscosMatch[5]
 				sparql
 					.fetchRiscos(termo.replace(/[^a-zA-Z0-9]/g,'\\W+'))
 					.then(result => {
 						const definicoes = result.bindings.reduce(function(acc, cur, i) {
-							var resultado = "\n-Nomes conhechidos:\n"+valor(cur.title)+"\n\nefeitos colaterais:\n"+valor(cur.efeitos_colaterais_pt)+"\n\nRisco na gravidez:\n"+valor(cur.risco_gravidez)+"\n\n-Recomendação de uso na amamentação:\n"+valor(cur.uso_aleitamento)+"\n\n-Tipo de aplicação:\n"+valor(cur.aplicacao)
+							var resultado = "\n-Nomes conhechidos:\n"+valor(cur.title)+"\n\n-Efeitos colaterais:\n"+valor(cur.efeitos_colaterais_pt)+"\n\n-Risco na gravidez:\n"+valor(cur.risco_gravidez)+"\n\n-Recomendação de uso na amamentação:\n"+valor(cur.uso_aleitamento)+"\n\n-Tipo de aplicação:\n"+valor(cur.aplicacao)
 							acc.push(resultado)
 							return acc
 						}, []).join("\n\n----------------------------------------\n\n");
@@ -91,6 +90,68 @@ module.exports = function(sparql) {
 				return ctx.reply(`${ctx.message.from.first_name}, vou buscar riscos do medicamento ${termo}, aguarde um pouco...`)
 			}
 			return false;
+		},
+		checkApresentacao: function(ctx) {
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "")
+			const apresentacaoRegex = /(.*)apresenta[^ ]([^ ]o|[^ ]es)( d[^ ](s)?)?( medicamento(s)?| rem[^ ]dio(s)?)? (.*)/i
+			const apresentacaoMatch = txt.match(apresentacaoRegex)
+			if (apresentacaoMatch) {
+				const termo = apresentacaoMatch[8]
+				sparql
+					.fetchApresentacao(termo.replace(/[^a-zA-Z0-9]/g,'\\W+'))
+					.then(result => {
+						const definicoes = result.bindings.reduce(function(acc, cur, i) {
+							var resultado = "\n-Nomes conhechidos:\n"+valor(cur.title)+"\n\n-Laboratório:\n"+valor(cur.laboratorio)+"\n\n-Apresentação:\n"+valor(cur.apresentacoes)
+							acc.push(resultado)
+							return acc
+						}, []).join("\n\n----------------------------------------\n\n");
+						ctx.reply(`${ctx.message.from.first_name}, aqui estão: \n${definicoes}`)
+					});
+				return ctx.reply(`${ctx.message.from.first_name}, vou buscar as apresentações do medicamento ${termo}, aguarde um pouco...`)
+			}
+			return false;
+		},
+		checkInfoApresentacao: function(ctx) {
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "")
+			const infoApresentacaoRegex = /(.*)(c[^ ]digo de barra(s)?|ean) (.*)/i
+			const infoApresentacaoMatch = txt.match(infoApresentacaoRegex)
+			if (infoApresentacaoMatch) {
+				const termo = infoApresentacaoMatch[4]
+				sparql
+					.fetchInfoApresentacao(termo.replace(/[^a-zA-Z0-9]/g,'\\W+'))
+					.then(result => {
+						const definicoes = result.bindings.reduce(function(acc, cur, i) {
+							var resultado = "\n-Apresentação:\n"+valor(cur.titleApresentacao)+"\n-Medicamento:\n"+valor(cur.titleMedicamento)+"\n-Tarja:\n"+valor(cur.tarja)+"\n-Restrito para uso hospitalar:\n"+valor(cur.restricao)+"\n-Valor de fábrica máximo 0% ICMS:\nR$ "+valor(cur.valorFabricaSemImposto)+"\n-Valor ao consumidor máximo 0% ICMS:\nR$ "+valor(cur.valorConsumidorSemImposto)+"\n-Valor ao governo máximo 0% ICMS:\nR$ "+valor(cur.valorGovernoSemImposto)
+							acc.push(resultado)
+							return acc
+						}, []).join("\n\n----------------------------------------\n\n");
+						ctx.reply(`${ctx.message.from.first_name}, aqui estão: \n${definicoes}`)
+					});
+				return ctx.reply(`${ctx.message.from.first_name}, vou buscar as informações da apresentação do medicamento de código de barras ${termo}, aguarde um pouco...`)
+			}
+			return false;
+		},
+		checkPreco: function(ctx) {
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "")
+			const precoRegex = /(.*)(pre[^ ]|valor)(.*)(c[^ ]digo de barra(s)?|ean) (.*) (em|n(o|a)) (.*)/i
+			const precoMatch = txt.match(precoRegex)
+			if (precoMatch) {
+				const ean = precoMatch[6]
+				const localidade = precoMatch[9]
+				sparql
+					.fetchPreco(ean.replace(/[^a-zA-Z0-9]/g,'\\W+'),localidade.replace(/[^a-zA-Z0-9]/g,'\\W+'))
+					.then(result => {
+						const definicoes = result.bindings.reduce(function(acc, cur, i) {
+							var resultado = "\n-Apresentação:\n"+valor(cur.titleApresentacao)+"\n-Medicamento:\n"+valor(cur.titleMedicamento)+"\n-ICMS:\n"+valor(cur.ICMS)+"\n-Valor de fábrica máximo com ICMS:\nR$ "+valor(cur.valorFabricaComImposto)+"\n-Valor ao consumidor máximo com ICMS:\nR$ "+valor(cur.valorConsumidorComImposto)+"\n-Valor ao governo máximo com ICMS:\nR$ "+valor(cur.valorGovernoComImposto)
+							acc.push(resultado)
+							return acc
+						}, []).join("\n\n----------------------------------------\n\n");
+						ctx.reply(`${ctx.message.from.first_name}, aqui estão: \n${definicoes}`)
+					});
+				return ctx.reply(`${ctx.message.from.first_name}, vou buscar as informações da apresentação do medicamento de código de barras ${ean}, aguarde um pouco...`)
+			}
+			return false;
 		}
+
 	}
 }
