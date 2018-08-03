@@ -194,19 +194,24 @@ module.exports = {
       PREFIX dc: <http://purl.org/dc/elements/1.1/>
       PREFIX owl: <http://www.w3.org/2002/07/owl#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
-      SELECT DISTINCT ?titleApresentacao ?titleMedicamento ?ean  ?tarja ?restricao ?valorFabricaSemImposto ?valorGovernoSemImposto ?valorConsumidorSemImposto WHERE{
+      SELECT DISTINCT ?titleApresentacao ?titleMedicamento ?ean ?tarja ?restricao ?valorFabricaSemImposto ?valorGovernoSemImposto ?valorConsumidorSemImposto WHERE{
         ?apresentacao a drugs:Apresentacao;
           dc:title ?titleApresentacao;
           drugs:ean ?ean;
-          drugs:restricaoHospitalar ?restricao;
-          drugs:tarja ?tarjaAux.
+          drugs:restricaoHospitalar ?restricao.
         OPTIONAL{
           ?medicamento drugs:temApresentacao ?apresentacao;
             dc:title ?titleMedicamento.
         }
 
-        ?tarjaAux rdfs:label ?titleTarja;
-          rdfs:comment ?comentTarja.
+        {
+          SELECT ?apresentacao (GROUP_CONCAT(DISTINCT ?tarjaX ; separator="\\n") as ?tarja){
+            ?apresentacao drugs:tarja ?tarjaAux.
+            ?tarjaAux rdfs:label ?titleTarja;
+              rdfs:comment ?comentTarja.
+            BIND(STR(CONCAT(str(?titleTarja),":\\n",str(?comentTarja))) as ?tarjaX)
+          }
+        }
         OPTIONAL{
           ?apresentacao drugs:preco ?preco1.
           ?preco1 a drugs:PrecoFabricaSemImposto;
@@ -223,8 +228,6 @@ module.exports = {
             drugs:valorPreco ?valorConsumidorSemImposto.
         }
 
-        
-        BIND(CONCAT(str(?titleTarja),":\\n",str(?comentTarja)) as ?tarja)
 
         FILTER(REGEX(str(?ean),${ean},"i"))
       }`)
@@ -236,7 +239,7 @@ module.exports = {
       PREFIX dc: <http://purl.org/dc/elements/1.1/>
       PREFIX owl: <http://www.w3.org/2002/07/owl#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
-      SELECT DISTINCT ?titleApresentacao ?titleMedicamento ?ean ?ICMS  ?valorFabricaComImposto ?valorConsumidorComImposto ?valorGovernoComImposto WHERE{
+      SELECT DISTINCT ?titleApresentacao ?titleMedicamento (?ean as ?codigoBarras) ?ICMS  ?valorFabricaComImposto ?valorConsumidorComImposto ?valorGovernoComImposto ?valorFabricaComImpostoALC ?valorConsumidorComImpostoALC ?valorGovernoComImpostoALC WHERE{
         ?apresentacao a drugs:Apresentacao;
           dc:title ?titleApresentacao;
           drugs:ean ?ean;
@@ -258,24 +261,45 @@ module.exports = {
           ?preco a drugs:PrecoFabricaComImposto;
             drugs:valorPreco ?valorFabricaComImposto.
           ?preco drugs:tributacao ?carga.
-
+          FILTER NOT EXISTS {?preco a drugs:PrecoFabricaComImpostoALC}
         }
         OPTIONAL{
           ?apresentacao drugs:preco ?preco1.
           ?preco1 a drugs:PrecoAoConsumidorComImposto;
             drugs:valorPreco ?valorConsumidorComImposto.
           ?preco1 drugs:tributacao ?carga.
-
+          FILTER NOT EXISTS {?preco1 a drugs:PrecoAoConsumidorComImpostoALC}
         }
         OPTIONAL{
           ?apresentacao drugs:preco ?preco2.
           ?preco2 a drugs:PrecoAoGovernoComImposto;
             drugs:valorPreco ?valorGovernoComImposto.
           ?preco2 drugs:tributacao ?carga.
-
+          FILTER NOT EXISTS {?preco2 a drugs:PrecoAoGovernoComImpostoALC}
         }
 
 
+        OPTIONAL{
+          ?apresentacao drugs:preco ?preco3.
+          ?preco3 a drugs:PrecoFabricaComImpostoALC;
+            drugs:valorPreco ?valorFabricaComImpostoALC.
+          ?preco3 drugs:tributacao ?carga.
+          
+        }
+        OPTIONAL{
+          ?apresentacao drugs:preco ?preco4.
+          ?preco4 a drugs:PrecoAoConsumidorComImpostoALC;
+            drugs:valorPreco ?valorConsumidorComImpostoALC.
+          ?preco4 drugs:tributacao ?carga.
+
+        }
+        OPTIONAL{
+          ?apresentacao drugs:preco ?preco5.
+          ?preco5 a drugs:PrecoAoGovernoComImpostoALC;
+            drugs:valorPreco ?valorGovernoComImpostoALC.
+          ?preco5 drugs:tributacao ?carga.
+
+        }
         FILTER(REGEX(str(?ean),${ean},"i") && REGEX(str(?local),${localidade},"i"))
       }`)
     .execute()

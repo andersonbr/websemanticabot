@@ -132,8 +132,8 @@ module.exports = function(sparql) {
 			return false;
 		},
 		checkPreco: function(ctx) {
-			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "")
-			const precoRegex = /(.*)(pre[^ ]|valor)(.*)(c[^ ]digo de barra(s)?|ean) (.*) (em|n(o|a)) (.*)/i
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase()
+			const precoRegex = /(.*)(pre[^ ]o com icms|valor com icms)(.*)(c[^ ]digo de barra(s)?|ean) (.*) (em|n(o|a)) (.*)/i
 			const precoMatch = txt.match(precoRegex)
 			if (precoMatch) {
 				const ean = precoMatch[6]
@@ -142,13 +142,13 @@ module.exports = function(sparql) {
 					.fetchPreco(ean.replace(/[^a-zA-Z0-9]/g,'\\W+'),localidade.replace(/[^a-zA-Z0-9]/g,'\\W+'))
 					.then(result => {
 						const definicoes = result.bindings.reduce(function(acc, cur, i) {
-							var resultado = "\n-Apresentação:\n"+valor(cur.titleApresentacao)+"\n-Medicamento:\n"+valor(cur.titleMedicamento)+"\n-ICMS:\n"+valor(cur.ICMS)+"\n-Valor de fábrica máximo com ICMS:\nR$ "+valor(cur.valorFabricaComImposto)+"\n-Valor ao consumidor máximo com ICMS:\nR$ "+valor(cur.valorConsumidorComImposto)+"\n-Valor ao governo máximo com ICMS:\nR$ "+valor(cur.valorGovernoComImposto)
+							var resultado = "\n-Apresentação:\n"+valor(cur.titleApresentacao)+"\n-Medicamento:\n"+valor(cur.titleMedicamento)+"\n-ICMS:\n"+valor(cur.ICMS)+"\n-Valor de fábrica máximo com ICMS:\nR$ "+valor(cur.valorFabricaComImposto)+"\n-Valor ao consumidor máximo com ICMS:\nR$ "+valor(cur.valorConsumidorComImposto)+"\n-Valor ao governo máximo com ICMS:\nR$ "+valor(cur.valorGovernoComImposto)     +"\n-Valor de fábrica máximo com ICMS em area de livre comércio:\nR$ "+valor(cur.valorFabricaComImpostoALC)+"\n-Valor ao consumidor máximo com ICMS em área de livre comércio:\nR$ "+valor(cur.valorConsumidorComImpostoALC)+"\n-Valor ao governo máximo com ICMS em area de livre comércio:\nR$ "+valor(cur.valorGovernoComImpostoALC)
 							acc.push(resultado)
 							return acc
 						}, []).join("\n\n----------------------------------------\n\n");
 						ctx.reply(`${ctx.message.from.first_name}, aqui estão: \n${definicoes}`)
 					});
-				return ctx.reply(`${ctx.message.from.first_name}, vou buscar as informações da apresentação do medicamento de código de barras ${ean}, aguarde um pouco...`)
+				return ctx.reply(`${ctx.message.from.first_name}, vou buscar o preço com ICMS da apresentação do medicamento de código de barras ${ean}, aguarde um pouco...`)
 			}
 			return false;
 		}
