@@ -1,4 +1,3 @@
-
 module.exports = function(sparql) {
 	return {
 		parseAndRun: function(ctx) {
@@ -17,7 +16,6 @@ module.exports = function(sparql) {
 		  	const txt = ctx.message.text.replace(/(|\.|\?|\!)$/, "")
 			const ajudaRegex = /(.*)(ajudar|ajuda|ajude|perguntas|pergunta|perguntar)(.*)/
 			if (ajudaRegex.test(txt)) {
-				
 				return ctx.reply(`Olá ${ctx.message.from.first_name},eu posso responder os seguintes tipos de perguntas:\n1) Os medicamentos com um determinado princípio ativos.\nEx.:Quais são os remédios com o princípio ativo dipirona?\n\n2)Posso definir alguns termos do domínio de medicamentos.\nEx.:Defina tarja preta\n\n3)Dar informações para algum medicamento.\nEx.:Fale sobre o medicamento buscopan\n\n4)Indicar os riscos de um medicamento.\nEx.:Quais os riscos do medicamento reopro?\n\n5)Listar as apresentações de um medicamento.\nEx:Quais as apresentações do medicamento reopro?\n\n6)Dê informações sobre a apresentação de código de barras 7896382701801\n7)Dizer o preço de uma apresentação com imposto ICMS em um Estado.\nEx:Qual o preço com ICMS da apresentação 7896382701801 no estado do Ceará`)
 			}
 		    return false
