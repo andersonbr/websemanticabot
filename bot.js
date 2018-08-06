@@ -24,8 +24,8 @@ bot.use((ctx, next) => {
   })
 })
 
-bot.start((ctx) => ctx.reply('Welcome!'))
-bot.help((ctx) => ctx.reply('Send me a sticker'))
+bot.start((ctx) => ctx.reply('Olá Bem-vindo,\nSou o mediBot e posso responder algumas de suas perguntas sobre medicamentos.'))
+bot.help((ctx) => comandos.help(ctx))
 bot.on('sticker', (ctx) => ctx.reply('👍'))
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.hears(/buy/i, (ctx) => ctx.reply('Buy-buy'))

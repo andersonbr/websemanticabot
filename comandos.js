@@ -8,12 +8,22 @@ module.exports = function(sparql) {
 						if (!this.checkPreco(ctx)) 
 							if (!this.checkInfoApresentacao(ctx)) 
 								if (!this.checkApresentacao(ctx)) 
-									if (!this.checkMedicamento(ctx)) {
+									if (!this.checkMedicamento(ctx))
+										if (!this.help(ctx)){
 
-									}
+										}
+		},
+		help: function(ctx){
+		  	const txt = ctx.message.text.replace(/(|\.|\?|\!)$/, "")
+			const ajudaRegex = /(.*)(ajudar|ajuda|ajude|perguntas|pergunta|perguntar)(.*)/
+			if (ajudaRegex.test(txt)) {
+				
+				return ctx.reply(`Olá ${ctx.message.from.first_name},eu posso responder os seguintes tipos de perguntas:\n1) Os medicamentos com um determinado princípio ativos.\nEx.:Quais são os remédios com o princípio ativo dipirona?\n\n2)Posso definir alguns termos do domínio de medicamentos.\nEx.:Defina tarja preta\n\n3)Dar informações para algum medicamento.\nEx.:Fale sobre o medicamento buscopan\n\n4)Indicar os riscos de um medicamento.\nEx.:Quais os riscos do medicamento reopro?\n\n5)Listar as apresentações de um medicamento.\nEx:Quais as apresentações do medicamento reopro?\n\n6)Dê informações sobre a apresentação de código de barras 7896382701801\n7)Dizer o preço de uma apresentação com imposto ICMS em um Estado.\nEx:Qual o preço com ICMS da apresentação 7896382701801 no estado do Ceará`)
+			}
+		    return false
 		},
 		checkRemediosDoPrincipioAtivo: function(ctx) {
-			const txt = ctx.message.text.replace(/( existem| existentes|)(|\.|\?|\!)$/, "")
+			const txt = ctx.message.text.replace(/( existem| existentes|)(|\.|\?|\!)$/, "").toLowerCase()
 			const principioativoRegex = /(quero|saber|quais|diga|dize|fala).*rem[^ ]+dio(|s).* princ[^ ]+ ativo (.*)/
 			const principioativoMatch = txt.match(principioativoRegex)
 			if (principioativoMatch) {
@@ -32,7 +42,7 @@ module.exports = function(sparql) {
 			return false;
 		},
 		checkDefinicaoTermo: function(ctx) {
-			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "")
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase()
 			const definicaoRegex = /(.*)((o que [^ ])|(defin|significa)([^ ]*)( de)?)( um(a?))? (.*)/i
 			const definicaoMatch = txt.match(definicaoRegex)
 			if (definicaoMatch) {
@@ -52,7 +62,7 @@ module.exports = function(sparql) {
 			return false;
 		},
 		checkMedicamento: function(ctx) {
-			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "")
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase()
 			const medicamentoRegex = /(.*)(medicamento|rem[^ ]dio) (.*)/i
 			const medicamentoMatch = txt.match(medicamentoRegex)
 			if (medicamentoMatch) {
@@ -72,7 +82,7 @@ module.exports = function(sparql) {
 			return false;
 		},
 		checkRiscos: function(ctx) {
-			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "")
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase()
 			const riscosRegex = /(.*)risco(s?) d(.) (medicamento |rem[^]dio )?(.*)/i
 			const riscosMatch = txt.match(riscosRegex)
 			if (riscosMatch) {
@@ -92,7 +102,7 @@ module.exports = function(sparql) {
 			return false;
 		},
 		checkApresentacao: function(ctx) {
-			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "")
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase()
 			const apresentacaoRegex = /(.*)apresenta[^ ]([^ ]o|[^ ]es)( d[^ ](s)?)?( medicamento(s)?| rem[^ ]dio(s)?)? (.*)/i
 			const apresentacaoMatch = txt.match(apresentacaoRegex)
 			if (apresentacaoMatch) {
@@ -112,7 +122,7 @@ module.exports = function(sparql) {
 			return false;
 		},
 		checkInfoApresentacao: function(ctx) {
-			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "")
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase()
 			const infoApresentacaoRegex = /(.*)(c[^ ]digo de barra(s)?|ean) (.*)/i
 			const infoApresentacaoMatch = txt.match(infoApresentacaoRegex)
 			if (infoApresentacaoMatch) {
