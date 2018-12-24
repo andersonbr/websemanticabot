@@ -7,6 +7,7 @@
   "main": "bot.js",
   "version": "1.0.0",
   "dependencies": {
+    "mongodb": "^3.1.10",
     "sparql-client-2": "0.6.2",
     "telegraf": "3.22.1"
   }

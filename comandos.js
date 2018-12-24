@@ -2,6 +2,7 @@
 module.exports = function(sparql) {
 	return {
 		parseAndRun: function(ctx) {
+
 			if (!this.checkRemediosDoPrincipioAtivo(ctx)) 
 				if (!this.checkDefinicaoTermo(ctx)) 
 					if (!this.checkRiscos(ctx)) 
@@ -10,7 +11,11 @@ module.exports = function(sparql) {
 								if (!this.checkApresentacao(ctx)) 
 									if (!this.checkMedicamento(ctx))
 										if (!this.help(ctx)){
-
+											const queries = require('./queries.js');
+											const dialogManager = require('./dialogManager.js')(queries);
+											dialogManager.setPai();
+											var context = getContext(ctx,dialogManager.parseAndRun);
+  											
 										}
 		},
 		help: function(ctx){
