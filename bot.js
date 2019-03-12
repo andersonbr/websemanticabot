@@ -87,8 +87,12 @@ const Telegraf = require('telegraf')
 const bot = new Telegraf(process.env.TELEGRAMTOKEN)
 const sparql = require('./sparql.js')
 const comandos = require('./comandos.js')(sparql)
-//const queries = require('./queries.js')
-//const dialogManager = require('./dialogManager.js')(queries)
+
+
+const queries = require('./queries.js')
+const dialogManager = require('./dialogManager.js')(queries)
+dialogManager.setPai();
+
 
 bot.context.db = {
   getScores: () => { return 42 }
@@ -109,6 +113,12 @@ bot.use((ctx, next) => {
 //bot.help((ctx) => comandos.help(ctx))
 bot.command("ajuda", (ctx) => {
   comandos.help(ctx);
+});
+bot.command("explorar", (ctx) => {
+  dialogManager.interativo(ctx);
+});
+bot.command("consultar", (ctx) => {
+  dialogManager.interativo(ctx);
 });
 bot.command("ajuda@websemantica_bot", (ctx) => {
   comandos.help(ctx);

@@ -4,9 +4,10 @@ module.exports = function(sparql) {
 			pai = this;
 		},
 		parseAndRun: function(ctx,telegram) {
+
 			if (telegram.message.text.match(/(.*)explor(.*)/) || telegram.message.text.match(/(.*)consult(.*)/)){
 				ctx.state = 0;
-				return pai.state0(ctx.telegram);
+				return pai.state0(ctx,telegram);
 			}
 			switch(ctx.state){
 				case 0:
@@ -75,7 +76,7 @@ module.exports = function(sparql) {
 					ctx.termo = match[2];
 					ctx.taskList = 1;
 					pai.state2(ctx,telegram);
-				}else if(text.match(exploracaoDuvidaRegex)){
+				}else if(text.match(consultaDuvidaRegex)){
 					//Termo não encontrado na entrada
 					ctx.state = 8;
 					telegram.reply(`Você quer consultar qual termo?`)
@@ -169,7 +170,7 @@ module.exports = function(sparql) {
 							textoDefinicao = textoDefinicao+".\nAlém disso é dos tipos: " + types;
 						}
 						if(definicao != ""){
-							textoDefinicao = textoDefinicao+"\n.Pode ser descrito como: " + definicao;	
+							textoDefinicao = textoDefinicao+".\nPode ser descrito como: " + definicao;	
 						}
 						return acc;
 					},[])
@@ -467,8 +468,7 @@ module.exports = function(sparql) {
       		telegram.reply(`Me desculpe, ${ctx.first_name}. Eu sei que meio vergonhoso, mas acho que a idade está começado a fazer efeito. Você pode recomeçar?`);
       		saveContext(ctx);
 		},
-		sair:function(ctx,telegram){
-			
+		limparContexto(ctx,telegram){
 			ctx.user_id = telegram.from.id;
 		    ctx.first_name =telegram.from.first_name;
 		    ctx.last_name =telegram.from.last_name;
@@ -486,7 +486,10 @@ module.exports = function(sparql) {
 		    ctx.maxTermos = 0;
 		    ctx.offset = 0;
 		    ctx.type_selected = -1;
-  				 
+		},
+		sair:function(ctx,telegram){
+			
+			pai.limparContexto(ctx,telegram);
   			telegram.reply(`Ok, ${ctx.first_name}. Até a próxima`);
   			saveContext(ctx);
   		},
@@ -494,6 +497,14 @@ module.exports = function(sparql) {
 			telegram.reply(ctx.listString +"\nou diga 'sair' para cancelar a operação. sair sem aspas ^^.");
 			ctx.state = 5;
 			saveContext(ctx);
+		},callbackInterativo(ctx,telegram){
+			
+			pai.limparContexto(ctx,telegram);
+		  	saveContext(ctx);
+		  	pai.parseAndRun(ctx,telegram);
+		},
+		interativo: function(telegram){
+		  	getContext(telegram,pai.callbackInterativo);
 		}
 
 	}
