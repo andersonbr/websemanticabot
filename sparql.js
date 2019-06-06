@@ -1,8 +1,8 @@
 const {SparqlClient, SPARQL} = require('sparql-client-2');
 
 module.exports = {
-  client: new SparqlClient('http://localhost:8890/sparql').register({
-    drugs: 'http://www.arida.ufc.br/ontology/drugs/',
+  client: new SparqlClient('http://localhost:8085/sparql').register({
+    drugs: 'http://www.linkedmed.com.br/ontology/drugs/',
     dc: 'http://purl.org/dc/elements/1.1/'
   }),
   fetchMedicamentos: function (principioAtivo,callback) {
@@ -45,7 +45,7 @@ module.exports = {
   ,
   fetchMedicamento: function (medicamento,callback) {
     const query = SPARQL`
-      PREFIX drugs: <http://www.arida.ufc.br/ontology/drugs/>
+      PREFIX drugs: <http://www.linkedmed.com.br/ontology/drugs/>
       PREFIX dc: <http://purl.org/dc/elements/1.1/>
       PREFIX owl: <http://www.w3.org/2002/07/owl#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
@@ -106,7 +106,7 @@ module.exports = {
   },
   fetchRiscos: function (medicamento,callback) {
     const query = SPARQL`
-        PREFIX drugs: <http://www.arida.ufc.br/ontology/drugs/>
+        PREFIX drugs: <http://www.linkedmed.com.br/ontology/drugs/>
         PREFIX dc: <http://purl.org/dc/elements/1.1/>
         PREFIX owl: <http://www.w3.org/2002/07/owl#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
@@ -170,7 +170,7 @@ module.exports = {
   },
     fetchApresentacao: function (medicamento,callback) {
         const query = SPARQL`
-            PREFIX drugs: <http://www.arida.ufc.br/ontology/drugs/>
+            PREFIX drugs: <http://www.linkedmed.com.br/ontology/drugs/>
             PREFIX dc: <http://purl.org/dc/elements/1.1/>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
@@ -202,7 +202,7 @@ module.exports = {
             });
   },fetchInfoApresentacao: function (ean,callback) {
     const query = SPARQL`
-      PREFIX drugs: <http://www.arida.ufc.br/ontology/drugs/>
+      PREFIX drugs: <http://www.linkedmed.com.br/ontology/drugs/>
       PREFIX dc: <http://purl.org/dc/elements/1.1/>
       PREFIX owl: <http://www.w3.org/2002/07/owl#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
@@ -250,7 +250,7 @@ module.exports = {
         });
   },fetchPreco: function (ean,localidade,callback) {
         const query = SPARQL`
-            PREFIX drugs: <http://www.arida.ufc.br/ontology/drugs/>
+            PREFIX drugs: <http://www.linkedmed.com.br/ontology/drugs/>
             PREFIX dc: <http://purl.org/dc/elements/1.1/>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  

@@ -1,0 +1,1882 @@
+{ message_id: 1177,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1546964858,
+  text: 'Definir tarja' }
+Response time 6ms
+{ message_id: 1180,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1546964876,
+  text: 'Explore tarja' }
+Response time 10ms
+(node:21115) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+{ message_id: 1184,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1546964880,
+  text: '0' }
+Response time 2ms
+{ message_id: 1187,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1546964890,
+  text: 'Sair' }
+Response time 2ms
+{ message_id: 1189,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1546964914,
+  text: 'Definir tarja' }
+Response time 3ms
+{ message_id: 1192,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1546965068,
+  text: 'Definir tarja' }
+Response time 2ms
+{ message_id: 1195,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1546978676,
+  text: 'Definir tarja' }
+Response time 2ms
+{ message_id: 1198,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1546998880,
+  text: 'Definir tarja' }
+Response time 3ms
+{ message_id: 1201,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1547073231,
+  text: 'Definir tarja' }
+Response time 3ms
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277235&limit=100&timeout=30 failed, reason: socket hang up
+{ message_id: 1204,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1547128581,
+  text: 'Definir tarja' }
+Response time 2ms
+{ message_id: 1207,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1547146304,
+  text: 'Definir tarja' }
+Response time 2ms
+{ message_id: 1210,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1547215104,
+  text: 'Definir tarja' }
+Response time 2ms
+{ message_id: 1213,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1547321768,
+  text: 'Definir tarja' }
+Response time 2ms
+{ message_id: 1216,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1547503950,
+  text: 'Definir tarja' }
+Response time 3ms
+{ message_id: 1219,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1547603710,
+  text: 'Definir tarja' }
+Response time 2ms
+{ message_id: 1222,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1547692370,
+  text: 'Definir tarja' }
+Response time 2ms
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277242&limit=100&timeout=30 failed, reason: read ECONNRESET
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277242&limit=100&timeout=30 failed, reason: read ETIMEDOUT
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277242&limit=100&timeout=30 failed, reason: connect ETIMEDOUT 149.154.167.220:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277242&limit=100&timeout=30 failed, reason: connect ETIMEDOUT 149.154.167.220:443
+{ message_id: 1226,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1548436638,
+  text: 'Definir tarja' }
+Response time 6ms
+{ message_id: 1229,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1548599616,
+  text: 'Definir tarja' }
+Response time 2ms
+{ message_id: 1232,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1548959823,
+  text: 'Definir tarja' }
+Response time 2ms
+{ message_id: 1235,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513240,
+  text: '/start',
+  entities: [ { offset: 0, length: 6, type: 'bot_command' } ] }
+Response time 344ms
+{ message_id: 1237,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513252,
+  text: 'Riesgos aspirina' }
+Response time 12ms
+(node:12149) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+
+criado novo usuário
+
+{ message_id: 1239,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513303,
+  text: 'Consulte aspirina' }
+Response time 2ms
+{ message_id: 1242,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513325,
+  text: '1' }
+Response time 1ms
+{ message_id: 1244,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513354,
+  text: '0' }
+Response time 1ms
+{ message_id: 1246,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513362,
+  text: 'Sair' }
+Response time 1ms
+{ message_id: 1248,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513379,
+  text: 'Consulte zolben' }
+Response time 1ms
+{ message_id: 1251,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513387,
+  text: '0' }
+Response time 1ms
+{ message_id: 1253,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513394,
+  text: '1' }
+Response time 1ms
+{ message_id: 1255,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513402,
+  text: '^^' }
+Response time 1ms
+{ message_id: 1258,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513414,
+  text: 'Sail' }
+Response time 1ms
+{ message_id: 1261,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513418,
+  text: 'Sair' }
+Response time 2ms
+{ message_id: 1263,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513435,
+  text: 'Consulte zolben' }
+Response time 1ms
+{ message_id: 1266,
+  from: 
+   { id: 209142292,
+     is_bot: false,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     language_code: 'en' },
+  chat: 
+   { id: 209142292,
+     first_name: 'Rodrigo',
+     last_name: 'Paredes',
+     type: 'private' },
+  date: 1549513441,
+  text: '1' }
+Response time 1ms
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277260&limit=100&timeout=30 failed, reason: read ECONNRESET
+{ message_id: 1268,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1549845555,
+  text: 'Definir tarja' }
+Response time 1ms
+{ message_id: 1271,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1549845573,
+  text: 'O que é tarja' }
+Response time 2ms
+{ message_id: 1274,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1549845592,
+  text: 'Explore tarja' }
+Response time 2ms
+{ message_id: 1278,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1549845605,
+  text: '0' }
+Response time 2ms
+{ message_id: 1281,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1549845613,
+  text: 'Sair' }
+Response time 1ms
+{ message_id: 1283,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1549845637,
+  text: 'Quais as apresentações do medicamento Buscopan?' }
+Response time 1ms
+{ message_id: 1289,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551356544,
+  text: 'Quais os riscos do medicamento reopro?' }
+Response time 10ms
+{ message_id: 1292,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551356568,
+  text: 'Quais os riscos do medicamento Buscopan?' }
+Response time 2ms
+{ message_id: 1295,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551356600,
+  text: 'Definir tarja' }
+Response time 1ms
+{ message_id: 1298,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551356626,
+  text: 'Quais são os riscos do medicamento Tylenol?' }
+Response time 1ms
+{ message_id: 1301,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551356877,
+  text: 'Definir tarja' }
+Response time 4ms
+{ message_id: 1310,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551797358,
+  text: 'Quais são os riscos do medicamento Buscopan?' }
+Response time 8ms
+(node:23349) UnhandledPromiseRejectionWarning: Error: Could not connect to SPARQL endpoint.
+    at /home/caioviktor/bot/websemanticabot/node_modules/sparql-client-2/lib/client.js:97:27
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+(node:23349) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:23349) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{ message_id: 1312,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551798559,
+  text: 'Definir tarja' }
+Response time 3ms
+EPPAAAA!!!!!
+
+
+Error: Could not connect to SPARQL endpoint.
+(node:23349) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'bindings' of undefined
+    at sparql.fetchDefinicao.then.result (/home/caioviktor/bot/websemanticabot/comandos.js:56:33)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+(node:23349) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+Failed to process updates. { Error: 409: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+    at buildConfig.then.then.then.then (/home/caioviktor/bot/websemanticabot/node_modules/telegraf/core/network/client.js:254:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+  code: 409,
+  response: 
+   { ok: false,
+     error_code: 409,
+     description: 'Conflict: terminated by other getUpdates request; make sure that only one bot instance is running' },
+  description: 'Conflict: terminated by other getUpdates request; make sure that only one bot instance is running',
+  parameters: {},
+  on: 
+   { method: 'getUpdates?offset=8277278&limit=100&timeout=30',
+     payload: {} } }
+{ message_id: 1314,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551799407,
+  text: 'Definir tarja' }
+Response time 6ms
+{ message_id: 1349,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551971789,
+  text: 'Caio Viktor Avila:\nQuais são os riscos do medicamento reopro?' }
+Response time 25ms
+{ message_id: 1352,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1551971796,
+  text: 'Caio Viktor Avila:\nQuais são os riscos do medicamento reopro?' }
+Response time 15ms
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: read ETIMEDOUT
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot646840670:AAG9BpTqix_IVGpYJnhFOufynXpg_HHhM7E/getUpdates?offset=8277293&limit=100&timeout=30 failed, reason: getaddrinfo EAI_AGAIN api.telegram.org:443
+{ message_id: 1355,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065299,
+  text: '/start',
+  entities: [ { offset: 0, length: 6, type: 'bot_command' } ] }
+Response time 320ms
+{ message_id: 1357,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065324,
+  text: 'Quais os riscos do medicamento Buscopan?' }
+Response time 3ms
+{ message_id: 1360,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065346,
+  text: 'Quais os riscos do medicamento reopro?' }
+Response time 2ms
+{ message_id: 1363,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065382,
+  text: 'O que é reopro?' }
+Response time 4ms
+(node:23727) UnhandledPromiseRejectionWarning: Error: 400: Bad Request: message is too long
+    at buildConfig.then.then.then.then (/home/caioviktor/bot/websemanticabot/node_modules/telegraf/core/network/client.js:254:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+(node:23727) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:23727) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{ message_id: 1365,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065405,
+  text: 'Defina tarja' }
+Response time 2ms
+{ message_id: 1368,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065426,
+  text: 'Defina reopro' }
+Response time 4ms
+(node:23727) UnhandledPromiseRejectionWarning: Error: 400: Bad Request: message is too long
+    at buildConfig.then.then.then.then (/home/caioviktor/bot/websemanticabot/node_modules/telegraf/core/network/client.js:254:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+(node:23727) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+{ message_id: 1370,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065471,
+  text: '/start',
+  entities: [ { offset: 0, length: 6, type: 'bot_command' } ] }
+Response time 310ms
+{ message_id: 1372,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065481,
+  text: '/ajuda',
+  entities: [ { offset: 0, length: 6, type: 'bot_command' } ] }
+Response time 1ms
+{ message_id: 1374,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065905,
+  text: '/start',
+  entities: [ { offset: 0, length: 6, type: 'bot_command' } ] }
+Response time 309ms
+{ message_id: 1376,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552065923,
+  text: 'Consulte Buscopan' }
+Response time 10ms
+(node:23727) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+/home/caioviktor/bot/websemanticabot/node_modules/mongodb/lib/operations/mongo_client_ops.js:466
+      throw err;
+      ^
+
+MongoNetworkError: failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (/home/caioviktor/bot/websemanticabot/node_modules/mongodb-core/lib/topologies/server.js:564:11)
+    at emitOne (events.js:116:13)
+    at Pool.emit (events.js:211:7)
+    at Connection.<anonymous> (/home/caioviktor/bot/websemanticabot/node_modules/mongodb-core/lib/connection/pool.js:317:12)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at Connection.emit (events.js:214:7)
+    at Socket.<anonymous> (/home/caioviktor/bot/websemanticabot/node_modules/mongodb-core/lib/connection/connection.js:246:50)
+    at Object.onceWrapper (events.js:315:30)
+    at emitOne (events.js:116:13)
+{ message_id: 149,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552670815,
+  text: 'Quais são os riscos do medicamento reopro?' }
+Response time 17ms
+{ message_id: 153,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552670872,
+  text: '/explorar',
+  entities: [ { offset: 0, length: 9, type: 'bot_command' } ] }
+Response time 7ms
+(node:26561) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+{ message_id: 155,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552670877,
+  text: 'Medicamento' }
+Response time 4ms
+{ message_id: 159,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552670883,
+  text: '10' }
+Response time 2ms
+{ message_id: 162,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552670891,
+  text: 'Sair' }
+Response time 2ms
+{ message_id: 164,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1552913448,
+  text: 'Defina tarja' }
+Response time 2ms
+Failed to fetch updates. Waiting: 1s request to https://api.telegram.org/bot651002368:AAGbk_d0sMIO92rpU_GSVgKAodukcMNDjUI/getUpdates?offset=992505725&limit=100&timeout=30 failed, reason: read ECONNRESET
+{ message_id: 174,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553114153,
+  text: '/consultar',
+  entities: [ { offset: 0, length: 10, type: 'bot_command' } ] }
+Response time 2ms
+{ message_id: 176,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553175815,
+  text: 'Sair' }
+Response time 2ms
+{ message_id: 180,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553175825,
+  text: 'Sair' }
+Response time 2ms
+{ message_id: 182,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553175833,
+  text: 'Defina tarja' }
+Response time 2ms
+{ message_id: 192,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553175869,
+  text: '/explorar',
+  entities: [ { offset: 0, length: 9, type: 'bot_command' } ] }
+Response time 4ms
+{ message_id: 194,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553175878,
+  text: 'Medicamento' }
+Response time 2ms
+{ message_id: 198,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553175888,
+  text: '0' }
+Response time 2ms
+{ message_id: 201,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553175904,
+  text: 'Sair' }
+Response time 2ms
+{ message_id: 203,
+  from: 
+   { id: 383083190,
+     is_bot: false,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade' },
+  chat: 
+   { id: 383083190,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     type: 'private' },
+  date: 1553262599,
+  text: '/start',
+  entities: [ { offset: 0, length: 6, type: 'bot_command' } ] }
+{ message_id: 204,
+  from: 
+   { id: 383083190,
+     is_bot: false,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     language_code: 'en' },
+  chat: 
+   { id: 383083190,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     type: 'private' },
+  date: 1553262602,
+  text: 'oi' }
+{ message_id: 205,
+  from: 
+   { id: 383083190,
+     is_bot: false,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     language_code: 'en' },
+  chat: 
+   { id: 383083190,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     type: 'private' },
+  date: 1553262614,
+  text: '/start',
+  entities: [ { offset: 0, length: 6, type: 'bot_command' } ] }
+{ message_id: 206,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553263444,
+  text: 'Defina tarja' }
+Response time 16ms
+Response time 14ms
+(node:21010) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+
+criado novo usuário
+
+Response time 364ms
+Response time 998ms
+{ message_id: 219,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553272993,
+  text: 'Definir tarja' }
+Response time 3ms
+{ message_id: 229,
+  from: 
+   { id: 383083190,
+     is_bot: false,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     language_code: 'en' },
+  chat: 
+   { id: 383083190,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     type: 'private' },
+  date: 1553273595,
+  text: '/explorar',
+  entities: [ { offset: 0, length: 9, type: 'bot_command' } ] }
+Response time 5ms
+{ message_id: 231,
+  from: 
+   { id: 383083190,
+     is_bot: false,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     language_code: 'en' },
+  chat: 
+   { id: 383083190,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     type: 'private' },
+  date: 1553273603,
+  text: 'Claritin' }
+Response time 5ms
+{ message_id: 235,
+  from: 
+   { id: 383083190,
+     is_bot: false,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     language_code: 'en' },
+  chat: 
+   { id: 383083190,
+     first_name: 'Daniel',
+     last_name: 'Andrade',
+     username: 'danielbandrade',
+     type: 'private' },
+  date: 1553273614,
+  text: '1' }
+Response time 2ms
+{ message_id: 237,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553282391,
+  text: 'Defina tarja' }
+Response time 15ms
+{ message_id: 247,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553354053,
+  text: '/explorar',
+  entities: [ { offset: 0, length: 9, type: 'bot_command' } ] }
+Response time 6ms
+(node:22410) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+/home/caioviktor/bot/websemanticabot/node_modules/mongodb/lib/operations/mongo_client_ops.js:466
+      throw err;
+      ^
+
+MongoNetworkError: failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (/home/caioviktor/bot/websemanticabot/node_modules/mongodb-core/lib/topologies/server.js:564:11)
+    at emitOne (events.js:116:13)
+    at Pool.emit (events.js:211:7)
+    at Connection.<anonymous> (/home/caioviktor/bot/websemanticabot/node_modules/mongodb-core/lib/connection/pool.js:317:12)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at Connection.emit (events.js:214:7)
+    at Socket.<anonymous> (/home/caioviktor/bot/websemanticabot/node_modules/mongodb-core/lib/connection/connection.js:246:50)
+    at Object.onceWrapper (events.js:315:30)
+    at emitOne (events.js:116:13)
+2019-03-23T12:16:39.086-0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten] MongoDB starting : pid=22603 port=27017 dbpath=/data/db 64-bit host=StanLee
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten] db version v4.0.6
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten] git version: caa42a1f75a56c7643d0b68d3880444375ec42e3
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten] modules: none
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten] build environment:
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten]     distarch: x86_64
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-03-23T12:16:39.088-0300 I CONTROL  [initandlisten] options: {}
+2019-03-23T12:16:39.088-0300 I STORAGE  [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-03-23T12:16:39.088-0300 I STORAGE  [initandlisten] 
+2019-03-23T12:16:39.088-0300 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2019-03-23T12:16:39.088-0300 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2019-03-23T12:16:39.088-0300 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=31676M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-03-23T12:16:39.521-0300 I STORAGE  [initandlisten] WiredTiger message [1553354199:521153][22603:0x7fe95b4b4a40], txn-recover: Main recovery loop: starting at 4/4864 to 5/256
+2019-03-23T12:16:39.576-0300 I STORAGE  [initandlisten] WiredTiger message [1553354199:576273][22603:0x7fe95b4b4a40], txn-recover: Recovering log 4 through 5
+2019-03-23T12:16:39.609-0300 I STORAGE  [initandlisten] WiredTiger message [1553354199:609777][22603:0x7fe95b4b4a40], txn-recover: Recovering log 5 through 5
+2019-03-23T12:16:39.636-0300 I STORAGE  [initandlisten] WiredTiger message [1553354199:636806][22603:0x7fe95b4b4a40], txn-recover: Set global recovery timestamp: 0
+2019-03-23T12:16:39.657-0300 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] 
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] 
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2019-03-23T12:16:39.674-0300 I CONTROL  [initandlisten] 
+2019-03-23T12:16:39.695-0300 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2019-03-23T12:16:39.696-0300 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-03-23T12:16:52.719-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48186 #1 (1 connection now open)
+2019-03-23T12:16:52.722-0300 I NETWORK  [conn1] received client metadata from 127.0.0.1:48186 conn1: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:16:52.732-0300 I NETWORK  [conn1] end connection 127.0.0.1:48186 (0 connections now open)
+2019-03-23T12:16:52.732-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48190 #2 (1 connection now open)
+2019-03-23T12:16:52.732-0300 I NETWORK  [conn2] received client metadata from 127.0.0.1:48190 conn2: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:16:52.737-0300 I NETWORK  [conn2] end connection 127.0.0.1:48190 (0 connections now open)
+2019-03-23T12:17:02.518-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48196 #3 (1 connection now open)
+2019-03-23T12:17:02.518-0300 I NETWORK  [conn3] received client metadata from 127.0.0.1:48196 conn3: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:02.526-0300 I NETWORK  [conn3] end connection 127.0.0.1:48196 (0 connections now open)
+2019-03-23T12:17:03.208-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48210 #4 (1 connection now open)
+2019-03-23T12:17:03.209-0300 I NETWORK  [conn4] received client metadata from 127.0.0.1:48210 conn4: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:03.211-0300 I NETWORK  [conn4] end connection 127.0.0.1:48210 (0 connections now open)
+2019-03-23T12:17:11.761-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48216 #5 (1 connection now open)
+2019-03-23T12:17:11.761-0300 I NETWORK  [conn5] received client metadata from 127.0.0.1:48216 conn5: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:11.763-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48220 #6 (2 connections now open)
+2019-03-23T12:17:11.763-0300 I NETWORK  [conn6] received client metadata from 127.0.0.1:48220 conn6: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:11.763-0300 I NETWORK  [conn5] end connection 127.0.0.1:48216 (1 connection now open)
+2019-03-23T12:17:11.765-0300 I NETWORK  [conn6] end connection 127.0.0.1:48220 (0 connections now open)
+2019-03-23T12:17:43.346-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48226 #7 (1 connection now open)
+2019-03-23T12:17:43.349-0300 I NETWORK  [conn7] received client metadata from 127.0.0.1:48226 conn7: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:43.359-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48230 #8 (2 connections now open)
+2019-03-23T12:17:43.360-0300 I NETWORK  [conn8] received client metadata from 127.0.0.1:48230 conn8: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:43.360-0300 I NETWORK  [conn7] end connection 127.0.0.1:48226 (1 connection now open)
+2019-03-23T12:17:43.364-0300 I NETWORK  [conn8] end connection 127.0.0.1:48230 (0 connections now open)
+2019-03-23T12:17:49.553-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48236 #9 (1 connection now open)
+2019-03-23T12:17:49.554-0300 I NETWORK  [conn9] received client metadata from 127.0.0.1:48236 conn9: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:49.561-0300 I NETWORK  [conn9] end connection 127.0.0.1:48236 (0 connections now open)
+2019-03-23T12:17:50.143-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48246 #10 (1 connection now open)
+2019-03-23T12:17:50.143-0300 I NETWORK  [conn10] received client metadata from 127.0.0.1:48246 conn10: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:50.144-0300 I NETWORK  [conn10] end connection 127.0.0.1:48246 (0 connections now open)
+2019-03-23T12:17:59.253-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48250 #11 (1 connection now open)
+2019-03-23T12:17:59.254-0300 I NETWORK  [conn11] received client metadata from 127.0.0.1:48250 conn11: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:59.255-0300 I NETWORK  [listener] connection accepted from 127.0.0.1:48254 #12 (2 connections now open)
+2019-03-23T12:17:59.256-0300 I NETWORK  [conn11] end connection 127.0.0.1:48250 (1 connection now open)
+2019-03-23T12:17:59.256-0300 I NETWORK  [conn12] received client metadata from 127.0.0.1:48254 conn12: { driver: { name: "nodejs", version: "3.1.10" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.4.0-143-generic" }, platform: "Node.js v8.15.1, LE, mongodb-core: 3.1.9" }
+2019-03-23T12:17:59.258-0300 I NETWORK  [conn12] end connection 127.0.0.1:48254 (0 connections now open)
+2019-03-26T15:54:51.673-0300 I CONTROL  [signalProcessingThread] got signal 1 (Hangup), will terminate after current cmd ends
+2019-03-26T15:54:51.673-0300 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-03-26T15:54:51.673-0300 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2019-03-26T15:54:51.673-0300 I CONTROL  [signalProcessingThread] Shutting down free monitoring
+2019-03-26T15:54:51.673-0300 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-03-26T15:54:51.675-0300 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-03-26T15:54:51.675-0300 I STORAGE  [signalProcessingThread] Shutting down session sweeper thread
+2019-03-26T15:54:51.675-0300 I STORAGE  [signalProcessingThread] Finished shutting down session sweeper thread
+2019-03-26T15:54:51.715-0300 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-03-26T15:54:51.715-0300 I CONTROL  [signalProcessingThread] now exiting
+2019-03-26T15:54:51.715-0300 I CONTROL  [signalProcessingThread] shutting down with code:0
+{ message_id: 298,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553798144,
+  text: 'Defina tarja' }
+Response time 7ms
+{ message_id: 308,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553798150,
+  text: '/explorar',
+  entities: [ { offset: 0, length: 9, type: 'bot_command' } ] }
+Response time 7ms
+(node:7791) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+{ message_id: 310,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553798156,
+  text: 'Medicamento' }
+Response time 5ms
+{ message_id: 314,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1553798160,
+  text: 'Sair' }
+Response time 2ms
+{ message_id: 316,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554122386,
+  text: 'Defina tarja' }
+Response time 6ms
+{ message_id: 326,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554822730,
+  text: 'Defina tarja' }
+Response time 16ms
+/home/caioviktor/bot/websemanticabot/node_modules/promise-nodeify/index.js:34
+    later(function() { throw err; });
+                       ^
+
+TypeError: Cannot read property 'results' of undefined
+    at /home/caioviktor/bot/websemanticabot/sparql.js:42:27
+    at doCallback (/home/caioviktor/bot/websemanticabot/node_modules/promise-nodeify/index.js:29:7)
+    at onRejected (/home/caioviktor/bot/websemanticabot/node_modules/promise-nodeify/index.js:80:5)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+{ message_id: 326,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554822730,
+  text: 'Defina tarja' }
+Response time 24ms
+{ message_id: 337,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554824643,
+  text: '/explorar',
+  entities: [ { offset: 0, length: 9, type: 'bot_command' } ] }
+Response time 7ms
+(node:7393) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+{ message_id: 339,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554824648,
+  text: 'Medicamento' }
+Response time 5ms
+{ message_id: 343,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554824652,
+  text: 'Sair' }
+Response time 1ms
+{ message_id: 345,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554824745,
+  text: 'Defina tarja' }
+Response time 3ms
+{ message_id: 355,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554824761,
+  text: 'Quais os riscos do medicamento reopro?' }
+Response time 5ms
+Failed to process updates. { Error: 409: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+    at buildConfig.then.then.then.then (/home/caioviktor/bot/websemanticabot/node_modules/telegraf/core/network/client.js:254:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+  code: 409,
+  response: 
+   { ok: false,
+     error_code: 409,
+     description: 'Conflict: terminated by other getUpdates request; make sure that only one bot instance is running' },
+  description: 'Conflict: terminated by other getUpdates request; make sure that only one bot instance is running',
+  parameters: {},
+  on: 
+   { method: 'getUpdates?offset=992505765&limit=100&timeout=30',
+     payload: {} } }
+{ message_id: 359,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554824813,
+  text: 'Defina tarja' }
+Response time 5ms
+{ message_id: 369,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554824819,
+  text: '/explorar',
+  entities: [ { offset: 0, length: 9, type: 'bot_command' } ] }
+Response time 8ms
+(node:7504) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+{ message_id: 371,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554824823,
+  text: 'Medicamento' }
+Response time 5ms
+{ message_id: 375,
+  from: 
+   { id: 560008154,
+     is_bot: false,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     language_code: 'pt-br' },
+  chat: 
+   { id: 560008154,
+     first_name: 'Caio Viktor',
+     last_name: 'Avila',
+     username: 'CaioViktor',
+     type: 'private' },
+  date: 1554824827,
+  text: 'Sair' }
+Response time 3ms

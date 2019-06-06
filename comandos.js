@@ -22,8 +22,9 @@ module.exports = function(sparql) {
 			const ajudaRegex = /(.*)(ajudar|ajuda|ajude|perguntas|pergunta|perguntar)(.*)/
 			if (ajudaRegex.test(txt)) {
 				ctx.reply(`Olá ${ctx.message.from.first_name}, Eu sou o MediBot. Sou um chatbot feito com a finalidade de lhe ajudar a tirar dúvidas sobre medicamentos e seus riscos.
-							\nPosso lhe ajudar de duas formas:Respondendo algumas perguntas rápidas como:
-							\n\t\tposso responder os seguintes tipos de perguntas:\n1) Os medicamentos com um determinado princípio ativos.\nEx.:Quais são os remédios com o princípio ativo dipirona?\n\n2)Posso definir alguns termos do domínio de medicamentos.\nEx.:Defina tarja preta\n\n3)Dar informações para algum medicamento.\nEx.:Fale sobre o medicamento buscopan\n\n4)Indicar os riscos de um medicamento.\nEx.:Quais os riscos do medicamento reopro?\n\n5)Listar as apresentações de um medicamento.\nEx:Quais as apresentações do medicamento reopro?\n\n6)Dê informações sobre a apresentação de código de barras 7896382701801\n7)Dizer o preço de uma apresentação com imposto ICMS em um Estado.\nEx:Qual o preço com ICMS da apresentação 7896382701801 no estado do Ceará.
+							\nPosso lhe ajudar de duas formas:
+							\n\tRespondendo algumas perguntas rápidas como:\n1) Os medicamentos com um determinado princípio ativos.\nEx.:Quais são os remédios com o princípio ativo dipirona?\n\n2)Posso definir alguns termos do domínio de medicamentos.\nEx.:Defina tarja preta\n\n3)Dar informações para algum medicamento.\nEx.:Fale sobre o medicamento buscopan\n\n4)Indicar os riscos de um medicamento.\nEx.:Quais os riscos do medicamento reopro?\n\n5)Listar as apresentações de um medicamento.\nEx:Quais as apresentações do medicamento reopro?\n\n6)Dizer o preço de uma apresentação.\nEx:Dê informações sobre a apresentação de código de barras 7896382701801\n\n7)Dizer o preço de uma apresentação com imposto ICMS em um Estado.\nEx:Qual o preço com ICMS da apresentação 7896382701801 no estado do Ceará.
+							\n----------------------------------------
 							\nAlém disso, posso responder suas perguntas de maneira interativa em dois modos:
 							\n\t\t(1) Navegando sobre os coceitos definidos em minha ontologia de conhecimento. Posso lhe falar definições e relacionamentos dos conceitos que conheço.\nPara iniciar este modo digite:\nExplore "termo"
 							\n\t\t(2) Consultando os dados em menu conhecimento. Posso lhe falar valores de propriedades de objetos (medicamentos,apresentações, princípios ativos, etc.) que conheço.\nPara iniciar este modo digite:\nConsulte "termo"
@@ -40,7 +41,8 @@ module.exports = function(sparql) {
 			if (principioativoMatch) {
 				const principioAtivo = principioativoMatch[3]
 				sparql
-					.fetchMedicamentos(principioAtivo.replace(/[^a-zA-Z0-9]/g,'\\W+'), function(result){
+					.fetchMedicamentos( principioAtivo.replace(/[^a-zA-Z0-9]/g,'\\W+')
+						, function(result){
 						const remedios = result.bindings.reduce(function(acc, cur, i) {
 							acc.push(cur.nomeMedicamento.value)
 							return acc
@@ -51,24 +53,25 @@ module.exports = function(sparql) {
 			}
 			return false;
 		},
-		checkDefinicaoTermo: function(ctx) {
+		checkDefinicaoTermo:  function(ctx) {
 			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase()
 			const definicaoRegex = /(.*)((o que [^ ])|(defin|significa)([^ ]*)( de)?)( um(a?))? (.*)/i
 			const definicaoMatch = txt.match(definicaoRegex)
 			if (definicaoMatch) {
 				const termo = definicaoMatch[9]
 				sparql
-					.fetchDefinicao(termo.replace(/[^a-zA-Z0-9]/g,'\\W+'),function(result){
+					.fetchDefinicao( termo.replace(/[^a-zA-Z0-9]/g,'\\W+')
+						,async function(result){
 						//console.log(result.bindings);
-						ctx.reply(`Conheço ${result.bindings.length} termos parecedios com "${termo}"`);
+						await ctx.reply(`Conheço ${result.bindings.length} termos parecedios com "${termo}"`);
 						//console.log(result.bindings.length);
 						result.bindings.forEach(function(cur,i,array){
 							//console.log(cur);
 							var response = "";
-							if(cur.comments)
-								response = valor(cur.comments)+"\n\n";
 							if(cur.titles)
 								response = response + "Nomes conhechidos:\n\t"+valor(cur.titles)+"\n\n";
+							if(cur.comments)
+								response = response + "significando:\n\t"+ valor(cur.comments)+"\n\n";
 							if(cur.types)
 								response = response + "Na ontologia tem o(s) tipo(s):\n\t"+valor(cur.types);
 							if(response != "")
@@ -92,10 +95,11 @@ module.exports = function(sparql) {
 			if (medicamentoMatch) {
 				const termo = medicamentoMatch[3]
 				sparql
-					.fetchMedicamento(termo.replace(/[^a-zA-Z0-9]/g,'\\W+'),function(result){
+					.fetchMedicamento( termo.replace(/[^a-zA-Z0-9]/g,'\\W+')
+						 ,async function(result){
 
 
-						ctx.reply(`Conheço ${result.bindings.length} medicamentos com nomes parecedios com "${termo}"`);
+						await ctx.reply(`Conheço ${result.bindings.length} medicamentos com nomes parecedios com "${termo}"`);
 						//console.log(result.bindings.length);
 						result.bindings.forEach(function(cur,i,array){
 							//console.log(cur);
@@ -136,11 +140,12 @@ module.exports = function(sparql) {
 			if (riscosMatch) {
 				const termo = riscosMatch[5]
 				sparql
-					.fetchRiscos(termo.replace(/[^a-zA-Z0-9]/g,'\\W+'),function(result){
+					.fetchRiscos( termo.replace(/[^a-zA-Z0-9]/g,'\\W+')
+						 , async function(result){
 						
 
 
-						ctx.reply(`Conheço ${result.bindings.length} medicamentos com nomes parecedios com "${termo}"`);
+						await ctx.reply(`Conheço ${result.bindings.length} medicamentos com nomes parecedios com "${termo}"`);
 						//console.log(result.bindings.length);
 						result.bindings.forEach(function(cur,i,array){
 							//console.log(cur);
@@ -178,11 +183,12 @@ module.exports = function(sparql) {
 			if (apresentacaoMatch) {
 				const termo = apresentacaoMatch[8]
 				sparql
-					.fetchApresentacao(termo.replace(/[^a-zA-Z0-9]/g,'\\W+'),function(result){
+					.fetchApresentacao( termo.replace(/[^a-zA-Z0-9]/g,'\\W+')
+						,async function(result){
 
 
 
-						ctx.reply(`Conheço ${result.bindings.length} medicamentos com nomes parecedios com "${termo}"`);
+						await ctx.reply(`Conheço ${result.bindings.length} medicamentos com nomes parecedios com "${termo}"`);
 						//console.log(result.bindings.length);
 						result.bindings.forEach(function(cur,i,array){
 							//console.log(cur);
@@ -217,9 +223,10 @@ module.exports = function(sparql) {
 			if (infoApresentacaoMatch) {
 				const termo = infoApresentacaoMatch[4]
 				sparql
-					.fetchInfoApresentacao(termo.replace(/[^a-zA-Z0-9]/g,'\\W+'),function(result){
+					.fetchInfoApresentacao( termo.replace(/[^a-zA-Z0-9]/g,'\\W+')
+						 ,async function(result){
 						
-						//ctx.reply(`Conheço ${result.bindings.length} medicamentos com nomes parecedios com "${termo}"`);
+						await ctx.reply(`Conheço ${result.bindings.length} medicamentos com nomes parecedios com "${termo}"`);
 						//console.log(result.bindings.length);
 						result.bindings.forEach(function(cur,i,array){
 							//console.log(cur);
@@ -262,7 +269,9 @@ module.exports = function(sparql) {
 				const ean = precoMatch[6]
 				const localidade = precoMatch[9]
 				sparql
-					.fetchPreco(ean.replace(/[^a-zA-Z0-9]/g,'\\W+'),localidade.replace(/[^a-zA-Z0-9]/g,'\\W+'),function(result) {
+					.fetchPreco( ean.replace(/[^a-zA-Z0-9]/g,'\\W+')
+						 ,  localidade.replace(/[^a-zA-Z0-9]/g,'\\W+')
+						,function(result) {
 						
 
 						result.bindings.forEach(function(cur,i,array){

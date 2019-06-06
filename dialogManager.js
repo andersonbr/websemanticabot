@@ -81,7 +81,7 @@ module.exports = function(sparql) {
 					ctx.state = 8;
 					telegram.reply(`Você quer consultar qual termo?`)
 				}else{
-					telegram.reply(`Desculpe. não entendi sua intenção`);
+					telegram.reply(`Desculpe. não entendi sua intenção.\n\nVocê gostaria de tentar explorar a ontologia sobro isso? Então digite explorar...`);
 				}
 			}
 		},
@@ -100,7 +100,8 @@ module.exports = function(sparql) {
 			//console.log("\nEstado 2!\n");
 			
 			telegram.reply(`Certo. Vou procurar os resultados para o termo exato ${ctx.termo}`);
-			var termo = ctx.termo.replace(/[^a-zA-Z0-9]/g,'\\W+');
+			// var termo = ctx.termo.replace(/[^a-zA-Z0-9]/g,'\\W+'); //substitur caracteres especiais (WINDOWS)
+			var termo = ctx.termo;
 			sparql
 				.numeroResultadosExato(termo,function(result){
 					const retorno = result.bindings.reduce(function(acc, cur, i) {							
@@ -207,7 +208,8 @@ module.exports = function(sparql) {
 
 			//console.log("\nEstado 4!\n");
 
-			var termo = ctx.termo.replace(/[^a-zA-Z0-9]/g,'\\W+');
+			// var termo = ctx.termo.replace(/[^a-zA-Z0-9]/g,'\\W+'); ////substitur caracteres especiais (WINDOWS)
+			var termo = ctx.termo;
 			var listaStr = "";
 			
 			sparql

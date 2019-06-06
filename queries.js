@@ -1,8 +1,8 @@
 const {SparqlClient, SPARQL} = require('sparql-client-2');
 
 module.exports = {
-  client: new SparqlClient('http://localhost:8890/sparql').register({
-    drugs: 'http://www.arida.ufc.br/ontology/drugs/',
+  client: new SparqlClient('http://localhost:8085/sparql').register({
+    drugs: 'http://www.linkedmed.com.br/ontology/drugs/',
     dc: 'http://purl.org/dc/elements/1.1/'
   }),
   numeroResultados: function (termo,callback) {
@@ -17,10 +17,10 @@ module.exports = {
           FILTER(regex(str(?title),${termo},"i"))
         }
       `;
-      //console.log(query);
+      // console.log(query);
     return this.client.query(query)
     .execute(function(error,response){
-      //console.log(response);
+      // console.log(response);
       callback(response.results);
     })
   },
@@ -36,10 +36,10 @@ module.exports = {
           FILTER(LCASE(str(?title))=${termo})
         }
       `;
-    //console.log(query);
+    // console.log(query);
     return this.client.query(query)
     .execute(function(error,response){
-      //console.log(response);
+      // console.log(response);
       callback(response.results);
     })
   },
@@ -58,10 +58,10 @@ module.exports = {
           OPTIONAL{?uri rdfs:comment ?commentU}
         }`;
         //console.log("URI:"+uri)
-        //console.log(query);
+        // console.log(query);
     return this.client.query(query)
     .execute(function(error,response){
-      //console.log(response.results.bindings);
+      // console.log(response.results.bindings);
       callback(response.results);
     })
     
@@ -79,7 +79,7 @@ module.exports = {
         }ORDER BY ?uri
         LIMIT 1
       `;
-    //console.log(query);
+    // console.log(query);
     return this.client.query(query)
     .execute(function(error,response){
       //console.log(response);
@@ -99,7 +99,7 @@ module.exports = {
           ?uri a ?classeU.
         }ORDER BY ?uri
       `;
-      //console.log(query);
+      // console.log(query);
     return this.client.query(query)
     .execute(function(error,response){
       //console.log(response);
@@ -113,7 +113,7 @@ module.exports = {
           ?uri a ?types
         }
       `;//AQUI
-      //console.log(query);
+      // console.log(query);
     return this.client.query(query)
     .execute(function(error,response){
       //console.log(response);
@@ -148,7 +148,7 @@ module.exports = {
           
         } ORDER BY ?types
       `;
-      //console.log(query);
+      // console.log(query);
     return this.client.query(query)
     .execute(function(error,response){
       //console.log(response.results.bindings);
@@ -169,7 +169,7 @@ module.exports = {
             {?termo rdfs:label ?title} UNION {?termo dc:title ?title}
         } ORDER BY ?types
       `;
-      //console.log(query);
+      // console.log(query);
     return this.client.query(query)
     .execute(function(error,response){
       //console.log(response.results.bindings);
@@ -198,7 +198,7 @@ module.exports = {
           }
         } 
       `;
-      //console.log(query);
+      // console.log(query);
     return this.client.query(query)
     .execute(function(error,response){
       //console.log(response);
