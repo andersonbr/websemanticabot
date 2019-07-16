@@ -1,3 +1,5 @@
+const crawler = require("./crawllers.js");
+
 module.exports = function(sparql) {
 	return {
 		setPai:function(){
@@ -545,9 +547,10 @@ module.exports = function(sparql) {
 					pai.apresentarLista(ctx,telegram);
 			})
 		},
-		state11: function(ctx,telegram){
+		state11: async function(ctx,telegram){
 			// console.log(ctx.uri_selected+"\n\n");
-			sparql.comp_fetchMedicamentosSimilares(ctx.uri_selected,function(result){
+			telegram.reply("Só um momento, estou buscando os medicamentos similares...");
+			sparql.comp_fetchMedicamentosSimilares(ctx.uri_selected, async function(result){
 				listaStr = "";
 				const lista = result.bindings.reduce(function(acc, cur, i) {
 						var resultado = valor(cur.name);
@@ -555,12 +558,29 @@ module.exports = function(sparql) {
 						return acc;
 					}, []);
 
-				console.log(lista);
+				// console.log(lista);
 
-				//TODO: Pegar preços
+			    telegram.reply("Vou buscar os preços na WEB, isso pode demorar um pouco...");
 
+			    const threshold = 10;
+			    const precos = await crawler.compararPrecos(ctx.termo,lista,threshold);
+			    for (i in precos){
+			    	const item = precos[i];
+			    	const nomeO = item[0]['nome'] + item[0]['apresentacao'];
+
+			    	await telegram.reply("O medicamento:\n"+nomeO+"\nEstá com o menor preço de \nR$:"+item[0]['preco']+".\nnas farmácias "+item[0]['loja'] + "\nlink:"+item[0]['loja_link']);
+			    	if(item[1] != null){
+			    		const nomeS = item[1]['nome'] + item[1]['apresentacao'];
+			    		await telegram.reply("Uma alternativa similar pode ser:");
+			    		await telegram.reply("O medicamento:\n"+nomeS+"\nEstá com o menor preço de\n R$:"+item[1]['preco']+".\nnas farmácias "+item[1]['loja'] + "\nlink:"+item[1]['loja_link']);
+			    	}
+			    	await telegram.reply("Vou procurar uma outra apresentação do medicamento origianal...");
+
+			    }
+			    await telegram.reply("Essas foram todas as melhores opções que encontrei");
 				pai.limparContexto(ctx,telegram);
 		  		saveContext(ctx);
+		  		console.log("terminou comparação");
 			})
 			
 		}
