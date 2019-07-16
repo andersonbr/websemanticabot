@@ -555,7 +555,7 @@ module.exports = function(sparql) {
 						return acc;
 					}, []);
 
-				// console.log(lista);
+				console.log(lista);
 
 				//TODO: Pegar preços
 
