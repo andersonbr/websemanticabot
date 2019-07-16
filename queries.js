@@ -1,7 +1,7 @@
 const {SparqlClient, SPARQL} = require('sparql-client-2');
 
 module.exports = {
-  client: new SparqlClient('http://localhost:8085/sparql').register({
+  client: new SparqlClient('http://localhost:8890/sparql/').register({
     drugs: 'http://www.linkedmed.com.br/ontology/drugs/',
     dc: 'http://purl.org/dc/elements/1.1/'
   }),
@@ -204,5 +204,35 @@ module.exports = {
       //console.log(response);
       callback(response.results);
     })
-  },
+  }, comp_fetchMedicamentos: function(medicamento,callback){
+        const query = SPARQL`
+            PREFIX drugs: <http://www.linkedmed.com.br/ontology/drugs/>
+            SELECT DISTINCT ?uri ?name FROM <http://localhost:8890/DAV/drugs> WHERE{
+                ?uri a drugs:Medicamento;
+                    dc:title ?name.
+                FILTER(REGEX(STR(?name),${medicamento},"i"))
+            }ORDER BY STRLEN(?name)`;
+            // console.log(query);
+        return this.client.query(query)
+            .execute(function(error,response){
+            // console.log(response);
+            callback(response.results);
+            });
+    }, comp_fetchMedicamentosSimilares: function(uri,callback){
+        const query = SPARQL`
+            SELECT DISTINCT ?name FROM <http://localhost:8890/DAV/drugs> WHERE{
+                BIND(<`+uri+`> as ?uri)
+                ?uri drugs:substancia ?principio_ativo.
+                ?medicamento a drugs:Medicamento;
+                    dc:title ?name;
+                    drugs:substancia ?principio_ativo.
+                FILTER(?uri != ?medicamento)
+            }`;
+            // console.log(query);
+        return this.client.query(query)
+            .execute(function(error,response){
+            // console.log(response);
+            callback(response.results);
+            });
+    }
 }

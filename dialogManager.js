@@ -40,6 +40,9 @@ module.exports = function(sparql) {
 				case 9:
 					pai.state9(ctx,telegram);
 				break;
+				case 10:
+					pai.state10(ctx,telegram);
+				break;
 				default:
 					pai.stateD(ctx,telegram);
 			}
@@ -246,6 +249,7 @@ module.exports = function(sparql) {
 					pai.apresentarLista(ctx,telegram);	
 				}else{
 					ctx.uri_selected = ctx.listOptions[op][0];
+					const termo = ctx.listOptions[op][1];
 					ctx.listOptions = null;
 					ctx.maxTermos = 0;
 					ctx.offset = 0;
@@ -262,6 +266,12 @@ module.exports = function(sparql) {
 						//Seleciona propriedade para consulta
 						ctx.state = 9;
 						pai.state9(ctx,telegram);
+					}
+					else if(ctx.taskList == 3){
+						//Seleciona medicamento para comparação
+						ctx.state = 11;
+						ctx.termo = termo;
+						pai.state11(ctx,telegram);
 					}
 
 				}
@@ -499,7 +509,8 @@ module.exports = function(sparql) {
 			telegram.reply(ctx.listString +"\nou diga 'sair' para cancelar a operação. sair sem aspas ^^.");
 			ctx.state = 5;
 			saveContext(ctx);
-		},callbackInterativo(ctx,telegram){
+		},
+		callbackInterativo(ctx,telegram){
 			
 			pai.limparContexto(ctx,telegram);
 		  	saveContext(ctx);
@@ -507,6 +518,51 @@ module.exports = function(sparql) {
 		},
 		interativo: function(telegram){
 		  	getContext(telegram,pai.callbackInterativo);
+		},
+		comparar: function(telegram){
+			getContext(telegram,pai.callbackComparar);
+		},
+		callbackComparar: function(ctx,telegram){
+			pai.limparContexto(ctx,telegram);
+			telegram.reply("Qual o nome do medicamento que você gostaria de comparar os preços?");
+			ctx.state = 10;
+		  	saveContext(ctx);
+
+		},
+		state10: function(ctx,telegram){
+			const text = telegram.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase().trim();
+			sparql.comp_fetchMedicamentos(text,function(result){
+				listaStr = "";
+				const lista = result.bindings.reduce(function(acc, cur, i) {
+						var resultado = [valor(cur.uri),valor(cur.name)];
+						acc.push(resultado);
+						listaStr = listaStr + "\n("+i+") "+valor(cur.name);
+						return acc;
+					}, []);
+					ctx.listOptions = lista;
+					ctx.taskList = 3;
+					ctx.listString = `Por favor, selecione o medicamento:\n${listaStr}.\n\n É só digitar o número da opção`;
+					pai.apresentarLista(ctx,telegram);
+			})
+		},
+		state11: function(ctx,telegram){
+			// console.log(ctx.uri_selected+"\n\n");
+			sparql.comp_fetchMedicamentosSimilares(ctx.uri_selected,function(result){
+				listaStr = "";
+				const lista = result.bindings.reduce(function(acc, cur, i) {
+						var resultado = valor(cur.name);
+						acc.push(resultado);
+						return acc;
+					}, []);
+
+				// console.log(lista);
+
+				//TODO: Pegar preços
+
+				pai.limparContexto(ctx,telegram);
+		  		saveContext(ctx);
+			})
+			
 		}
 
 	}

@@ -1,7 +1,7 @@
 const {SparqlClient, SPARQL} = require('sparql-client-2');
 
 module.exports = {
-  client: new SparqlClient('http://localhost:8085/sparql').register({
+  client: new SparqlClient('http://localhost:8890/sparql/').register({
     drugs: 'http://www.linkedmed.com.br/ontology/drugs/',
     dc: 'http://purl.org/dc/elements/1.1/'
   }),
