@@ -322,5 +322,31 @@ module.exports = {
             //console.log(response);
             callback(response.results);
             });
+  },
+    fetchPrecoMedicamento: function (medicamento,callback) {
+    const query = SPARQL`
+        PREFIX drugs: <http://www.linkedmed.com.br/ontology/drugs/>
+        PREFIX dc: <http://purl.org/dc/elements/1.1/>
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  
+        SELECT DISTINCT (str(?title) as ?title) (str(?titleApresentacao) as ?titleApresentacao) ?precoVal WHERE{
+            ?medicamento a drugs:Medicamento;
+                dc:title ?title;
+                drugs:temApresentacao ?apresentacao.
+
+            ?apresentacao drugs:preco ?preco;
+                dc:title ?titleApresentacao.
+
+            ?preco a drugs:PrecoAoConsumidorSemImposto;
+                drugs:valorPreco ?precoVal.
+        
+        FILTER(REGEX(str(?title),${medicamento},"i"))
+      }`;
+      // console.log(query);
+    return this.client.query(query)
+      .execute(function(error,response){
+        // console.log(response);
+        callback(response.results);
+      });
   }
 }
