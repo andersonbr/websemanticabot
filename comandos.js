@@ -23,12 +23,12 @@ module.exports = function(sparql) {
 			if (ajudaRegex.test(txt)) {
 				ctx.reply(`Olá ${ctx.message.from.first_name}, Eu sou o MediBot. Sou um chatbot feito com a finalidade de lhe ajudar a tirar dúvidas sobre medicamentos e seus riscos.
 							\nPosso lhe ajudar de duas formas:
-							\n\tRespondendo algumas perguntas rápidas como:\n1) Os medicamentos com um determinado princípio ativos.\nEx.:Quais são os remédios com o princípio ativo dipirona?\n\n2)Posso definir alguns termos do domínio de medicamentos.\nEx.:Defina tarja preta\n\n3)Dar informações para algum medicamento.\nEx.:Fale sobre o medicamento buscopan\n\n4)Indicar os riscos de um medicamento.\nEx.:Quais os riscos do medicamento reopro?\n\n5)Listar as apresentações de um medicamento.\nEx:Quais as apresentações do medicamento reopro?\n\n6)Dizer o preço de uma apresentação.\nEx:Dê informações sobre a apresentação de código de barras 7896382701801\n\n7)Dizer o preço de uma apresentação com imposto ICMS em um Estado.\nEx:Qual o preço com ICMS da apresentação 7896382701801 no estado do Ceará.
+							\n\tRespondendo algumas perguntas rápidas como:\n1) Os medicamentos com um determinado princípio ativos.\nEx.:Quais são os remédios com o princípio ativo dipirona?\n\n2)Posso definir alguns termos do domínio de medicamentos.\nEx.:Defina tarja preta\n\n3)Dar informações para algum medicamento.\nEx.:Fale sobre o medicamento buscopan\n\n4)Indicar os riscos de um medicamento.\nEx.:Quais os riscos do medicamento reopro?\n\n5)Listar as apresentações de um medicamento.\nEx:Quais as apresentações do medicamento reopro?\n\n6)Dizer o preço de uma apresentação.\nEx:Dê informações sobre a apresentação de código de barras 7896382701801\n\n7)Dizer o preço de uma apresentação com imposto ICMS em um Estado.\nEx:Qual o preço com ICMS da apresentação 7896382701801 no estado do Ceará.\n\n 8)Dizer os preços de um medicamento.\nEx:Quais os preços do medicamento Buscopan?
 							\n----------------------------------------
 							\nAlém disso, posso responder suas perguntas de maneira interativa em dois modos:
 							\n\t\t(1) Navegando sobre os coceitos definidos em minha ontologia de conhecimento. Posso lhe falar definições e relacionamentos dos conceitos que conheço.\nPara iniciar este modo digite:\nExplore "termo"
 							\n\t\t(2) Consultando os dados em menu conhecimento. Posso lhe falar valores de propriedades de objetos (medicamentos,apresentações, princípios ativos, etc.) que conheço.\nPara iniciar este modo digite:\nConsulte "termo"
-					`);		
+					`);			
 
 				return true;
 			}
@@ -291,6 +291,39 @@ module.exports = function(sparql) {
 						//ctx.reply(`${ctx.message.from.first_name}, aqui estão: \n${definicoes}`)
 					});
 				return ctx.reply(`${ctx.message.from.first_name}, vou buscar o preço com ICMS da apresentação do medicamento de código de barras ${ean}, aguarde um pouco...`)
+			}
+			return false;
+		},
+		checkPrecoMedicamento: function(ctx) {
+			const txt = ctx.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase()
+			const precoRegex = /(.*)(pre[^ ]o(s)?)( d(.*)|( para (o|a)?))?( medica(.*)| rem[^ ]dio(s)?)? (.*)/i
+			const precoMatch = txt.match(precoRegex)
+			if (precoMatch) {
+				const medicamento = precoMatch[11]
+				sparql
+					.fetchPrecoMedicamento( medicamento.replace(/[^a-zA-Z0-9]/g,'\\W+')
+						,function(result) {
+						
+
+						result.bindings.forEach(function(cur,i,array){
+							//console.log(cur);
+							var resultado = "\n-Apresentação:\n"+valor(cur.title)+" - "+valor(cur.titleApresentacao)+"\n-Valor ao consumidor sem impostos:\nR$:\n"+valor(cur.precoVal);
+							
+							if(resultado != "")
+								ctx.reply(resultado);
+							else
+								ctx.reply("Desculpe não encontrei nenhum preço para o medicamento.");
+						});
+
+
+						//const definicoes = result.bindings.reduce(function(acc, cur, i) {
+						//	var resultado = "\n-Apresentação:\n"+valor(cur.titleApresentacao)+"\n-Medicamento:\n"+valor(cur.titleMedicamento)+"\n-ICMS:\n"+valor(cur.ICMS)+"\n-Valor de fábrica máximo com ICMS:\nR$ "+valor(cur.valorFabricaComImposto)+"\n-Valor ao consumidor máximo com ICMS:\nR$ "+valor(cur.valorConsumidorComImposto)+"\n-Valor ao governo máximo com ICMS:\nR$ "+valor(cur.valorGovernoComImposto)     +"\n-Valor de fábrica máximo com ICMS em area de livre comércio:\nR$ "+valor(cur.valorFabricaComImpostoALC)+"\n-Valor ao consumidor máximo com ICMS em área de livre comércio:\nR$ "+valor(cur.valorConsumidorComImpostoALC)+"\n-Valor ao governo máximo com ICMS em area de livre comércio:\nR$ "+valor(cur.valorGovernoComImpostoALC)
+						//	acc.push(resultado)
+						//	return acc
+						//}, []).join("\n\n----------------------------------------\n\n");
+						//ctx.reply(`${ctx.message.from.first_name}, aqui estão: \n${definicoes}`)
+					});
+				return ctx.reply(`${ctx.message.from.first_name}, vou buscar os preços para o medicamento ${medicamento}, aguarde um pouco...`)
 			}
 			return false;
 		}
