@@ -10,7 +10,7 @@ const distance = new SimilarSearch();
 const scrapList = async function(medicamento,urls_visitadas){
     var itens = [];
     const base = "https://consultaremedios.com.br";
-    const currentUrl = 'https://consultaremedios.com.br/busca?termo='+medicamento+'&filter[with_offers]=Com%20ofertas';
+    const currentUrl = 'https://consultaremedios.com.br/busca?termo='+medicamento+'&filter[types][]=medicine&filter[with_offers]=Com%20ofertas';
     
     // console.log(urls_visitadas);
     if(urls_visitadas.has(currentUrl)){//Itens já analisados
@@ -65,6 +65,13 @@ const scrapIten = async function(page,name,urls_visitadas){
                 
 
                 // console.log(apresentacao);
+                const descri = $("#indication-collapse > div:nth-child(1) > p:nth-child(1)").text();
+                data['descri'] = descri;
+              // console.log(descri);
+              
+                const usar = $("#dosage-collapse > div:nth-child(1) > p:nth-child(1)").text();
+                data['usar'] = usar;
+              // console.log(usar);
 
                 await $(".presentation-offer__item[data-is-best-price='']").each( async(i,item2) => {
 
@@ -79,6 +86,9 @@ const scrapIten = async function(page,name,urls_visitadas){
                   const preco = $(item2).find("div:nth-child(1) > a:nth-child(2) > div:nth-child(3) > strong:nth-child(4)").text(); 
                   data['preco'] = preco;
                   // console.log(preco);
+
+
+
 
                   // console.log(data)
                 });
@@ -125,22 +135,24 @@ const compararPrecos = async function(original,similares,threshold){
             if(precosSimilares[j] == null)
                 continue;
             const item = precosSimilares[j][0];
-            var categoria = 0;
+            var categoria = -1;
             var proximidade = Number.MAX_SAFE_INTEGER;
             for (var k in originais){
                 const distancia = distance.getSimilarity(originais[k][0]['apresentacao'],item['apresentacao']);
-                if(distancia < proximidade && distancia <= threshold){
+                if((originais[k][0]['apresentacao'].length > 0 && item['apresentacao'].length > 0) && distancia < proximidade && distancia <= threshold){
                     categoria = k;
                     proximidade = distancia;
                 }
             }
             // console.log(originais[categoria][0]['apresentacao']+" ~ "+item['apresentacao']+"\n"+proximidade);
-            var menorAtual = Number.MAX_SAFE_INTEGER;
-            if(originais[categoria][1] != null)
-                menorAtual = parseInt(originais[categoria][1]['preco']);
-            const precoItem = parseInt(item['preco']);
-            if(precoItem < menorAtual){
-                originais[categoria][1] = item;
+            if(categoria != -1){
+                var menorAtual = Number.MAX_SAFE_INTEGER;
+                if(originais[categoria][1] != null)
+                    menorAtual = parseInt(originais[categoria][1]['preco']);
+                const precoItem = parseInt(item['preco']);
+                if(precoItem < menorAtual){
+                    originais[categoria][1] = item;
+                }
             }
         }
     }

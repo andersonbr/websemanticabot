@@ -160,12 +160,20 @@ bot.command("comparar_preco", (ctx) => {
 //bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 //bot.hears(/buy/i, (ctx) => ctx.reply('Buy-buy'))
 //=======
-bot.start((ctx) => ctx.reply('Olá Bem-vindo,\nSou o mediBot e posso responder algumas de suas perguntas sobre medicamentos.'))
+// bot.start((ctx) => ctx.reply('Olá Bem-vindo,\nSou o mediBot e posso responder algumas de suas perguntas sobre medicamentos.'))
+bot.start((ctx) => comandos.help(ctx))
 //bot.help((ctx) => comandos.help(ctx))
 
 bot.on('sticker', (ctx) => ctx.reply('👍'))
 bot.hears('hi', (ctx) => ctx.reply('E aí'))
 bot.hears(/buy/i, (ctx) => ctx.reply('Buy-buy'))
+
+// bot.on('location', (msg) => {
+//     console.log(msg.location);
+//   // console.log(msg.location.latitude);
+//   // console.log(msg.location.longitude);
+// });
+
 //>>>>>>> caio
 bot.on('text', (ctx) => {
     comandos.parseAndRun(ctx);

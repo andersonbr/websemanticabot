@@ -86,7 +86,7 @@ module.exports = function(sparql) {
 					ctx.state = 8;
 					telegram.reply(`Você quer consultar qual termo?`)
 				}else{
-					telegram.reply(`Desculpe. não entendi sua intenção.\n\nVocê gostaria de tentar explorar a ontologia sobro isso? Então digite explorar...`);
+					telegram.reply(`Desculpe. não entendi sua intenção.\n\nVocê tentar os modos interativos pelo menu de comandos do chat...`);
 				}
 			}
 		},
@@ -504,7 +504,7 @@ module.exports = function(sparql) {
 		sair:function(ctx,telegram){
 			
 			pai.limparContexto(ctx,telegram);
-  			telegram.reply(`Ok, ${ctx.first_name}. Até a próxima`);
+  			telegram.reply(`${ctx.first_name}. Até a próxima`);
   			saveContext(ctx);
   		},
 		apresentarLista: function(ctx,telegram){
@@ -531,9 +531,9 @@ module.exports = function(sparql) {
 		  	saveContext(ctx);
 
 		},
-		state10: function(ctx,telegram){
+		state10: async function(ctx,telegram){
 			const text = telegram.message.text.replace(/(|\.|\?|\!|\"|\')$/, "").toLowerCase().trim();
-			sparql.comp_fetchMedicamentos(text,function(result){
+			sparql.comp_fetchMedicamentos(text, async function(result){
 				listaStr = "";
 				const lista = result.bindings.reduce(function(acc, cur, i) {
 						var resultado = [valor(cur.uri),valor(cur.name)];
@@ -541,6 +541,10 @@ module.exports = function(sparql) {
 						listaStr = listaStr + "\n("+i+") "+valor(cur.name);
 						return acc;
 					}, []);
+					if(lista.length == 0){
+						await telegram.reply("Desculpe, não encontrei o medicamento na minha memória.");
+						return pai.sair(ctx,telegram);
+					}
 					ctx.listOptions = lista;
 					ctx.taskList = 3;
 					ctx.listString = `Por favor, selecione o medicamento:\n${listaStr}.\n\n É só digitar o número da opção`;
@@ -562,19 +566,20 @@ module.exports = function(sparql) {
 
 			    telegram.reply("Vou buscar os preços na WEB, isso pode demorar um pouco...");
 
-			    const threshold = 10;
+			    const threshold = 5;
 			    const precos = await crawler.compararPrecos(ctx.termo,lista,threshold);
 			    for (i in precos){
-			    	const item = precos[i];
+			    	const item = precos[i];	
 			    	const nomeO = item[0]['nome'] + item[0]['apresentacao'];
 
-			    	await telegram.reply("O medicamento:\n"+nomeO+"\nEstá com o menor preço de \nR$:"+item[0]['preco']+".\nnas farmácias "+item[0]['loja'] + "\nlink:"+item[0]['loja_link']);
+			    	// console.log(item);
+			    	await telegram.reply("O medicamento:\n"+nomeO+"\n\n\nEstá com o menor preço de \nR$:"+item[0]['preco']+".\nnas farmácias "+item[0]['loja'] + "\nlink:"+item[0]['loja_link']+"\n\n"+item[0]['descri']+"\n"+item[0]['usar']);
 			    	if(item[1] != null){
 			    		const nomeS = item[1]['nome'] + item[1]['apresentacao'];
 			    		await telegram.reply("Uma alternativa similar pode ser:");
-			    		await telegram.reply("O medicamento:\n"+nomeS+"\nEstá com o menor preço de\n R$:"+item[1]['preco']+".\nnas farmácias "+item[1]['loja'] + "\nlink:"+item[1]['loja_link']);
+			    		await telegram.reply("O medicamento:\n"+nomeS+"\n\n\nEstá com o menor preço de\n R$:"+item[1]['preco']+".\nnas farmácias "+item[1]['loja'] + "\nlink:"+item[1]['loja_link']+"\n\n"+item[1]['descri']+"\n"+item[1]['usar']);
 			    	}
-			    	await telegram.reply("Vou procurar uma outra apresentação do medicamento origianal...");
+			    	await telegram.reply("Vou procurar uma outra apresentação do medicamento original...");
 
 			    }
 			    await telegram.reply("Essas foram todas as melhores opções que encontrei");

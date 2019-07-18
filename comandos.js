@@ -29,6 +29,7 @@ module.exports = function(sparql) {
 							\nAlém disso, posso responder suas perguntas de maneira interativa em dois modos:
 							\n\t\t(1) Navegando sobre os coceitos definidos em minha ontologia de conhecimento. Posso lhe falar definições e relacionamentos dos conceitos que conheço.\nPara iniciar este modo digite:\nExplore "termo"
 							\n\t\t(2) Consultando os dados em menu conhecimento. Posso lhe falar valores de propriedades de objetos (medicamentos,apresentações, princípios ativos, etc.) que conheço.\nPara iniciar este modo digite:\nConsulte "termo"
+							\nAh, agora também posso buscar e comparar preços de um medicamento e seus similares na WEB. Isso pode ser feito através do comando "/comparar_preco".
 					`);			
 
 				return true;
