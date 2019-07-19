@@ -140,6 +140,7 @@ const compararPrecos = async function(original,similares,threshold){
             for (var k in originais){
                 const distancia = distance.getSimilarity(originais[k][0]['apresentacao'],item['apresentacao']);
                 if((originais[k][0]['apresentacao'].length > 0 && item['apresentacao'].length > 0) && distancia < proximidade && distancia <= threshold){
+                    // if(distancia < proximidade && distancia <= threshold){
                     categoria = k;
                     proximidade = distancia;
                 }
@@ -148,15 +149,16 @@ const compararPrecos = async function(original,similares,threshold){
             if(categoria != -1){
                 var menorAtual = Number.MAX_SAFE_INTEGER;
                 if(originais[categoria][1] != null)
-                    menorAtual = parseInt(originais[categoria][1]['preco']);
-                const precoItem = parseInt(item['preco']);
+                    menorAtual = parseFloat(originais[categoria][1]['preco']);
+                const precoItem = parseFloat(item['preco']);
                 if(precoItem < menorAtual){
                     originais[categoria][1] = item;
                 }
             }
         }
     }
-    return originais;
+    const originaisOrdenados = originais.sort(function(a,b){return parseFloat(a[0]['preco']) - parseFloat(b[0]['preco'])});
+    return originaisOrdenados;
 }
 
 module.exports = {

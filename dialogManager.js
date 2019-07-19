@@ -566,7 +566,7 @@ module.exports = function(sparql) {
 
 			    telegram.reply("Vou buscar os preços na WEB, isso pode demorar um pouco...");
 
-			    const threshold = 5;
+			    const threshold = 8;
 			    const precos = await crawler.compararPrecos(ctx.termo,lista,threshold);
 			    for (i in precos){
 			    	const item = precos[i];	
@@ -574,10 +574,12 @@ module.exports = function(sparql) {
 
 			    	// console.log(item);
 			    	await telegram.reply("O medicamento:\n"+nomeO+"\n\n\nEstá com o menor preço de \nR$:"+item[0]['preco']+".\nnas farmácias "+item[0]['loja'] + "\nlink:"+item[0]['loja_link']+"\n\n"+item[0]['descri']+"\n"+item[0]['usar']);
-			    	if(item[1] != null){
+			    	if(item[1] != null && parseFloat(item[1]['preco']) < parseFloat(item[0]['preco'])){
 			    		const nomeS = item[1]['nome'] + item[1]['apresentacao'];
-			    		await telegram.reply("Uma alternativa similar pode ser:");
+			    		await telegram.reply("*********************************");
+			    		await telegram.reply("Uma alternativa similar mais barata pode ser:");
 			    		await telegram.reply("O medicamento:\n"+nomeS+"\n\n\nEstá com o menor preço de\n R$:"+item[1]['preco']+".\nnas farmácias "+item[1]['loja'] + "\nlink:"+item[1]['loja_link']+"\n\n"+item[1]['descri']+"\n"+item[1]['usar']);
+			    		await telegram.reply("*********************************");
 			    	}
 			    	await telegram.reply("Vou procurar uma outra apresentação do medicamento original...");
 
